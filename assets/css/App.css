@@ -1,0 +1,213 @@
+/*
+ *
+ * Main CSS
+ *
+ */
+body {
+	font-family:'Roboto';
+	overflow-x:hidden;
+}
+.center {
+	margin-left:auto!important;
+	margin-right:auto!important;
+}
+.interactable {
+	cursor:pointer;
+	transition-duration:0.2s;
+}
+.interactable:hover {
+	opacity:0.6;
+}
+.section {
+	position:relative;
+	width:100%;
+	padding:10%;
+	overflow:hidden;
+}
+.section_header {
+	font-size:40px;
+	font-weight:bold;
+	display:block;
+}
+.divider_bar {
+	width:150px;
+	height:1px;
+	margin:30px 0;
+}
+.divider_bar.dark {
+	background-color:#909090;
+}
+.divider_bar.light {
+	background-color:#ffffff;
+}
+.divider_bar.right {
+	margin-left:auto;
+}
+.section_body_text {
+	display:block;
+	font-size:22px;
+	font-weight:lighter;
+}
+.section_image_collection {
+	position:relative;
+}
+.section_image {
+    width: 100%;
+}
+.section_image.dark {
+	box-shadow: 0 0 100px #404040;
+}
+.section_image.light {
+	box-shadow: 0 0 100px #909090;
+}
+.section_image_caption {
+	font-weight:lighter;
+	font-size:14px;
+}
+.section_image_caption.dark {
+	color:#ffffff;
+}
+.section_image_caption.light {
+	color:#000000;
+}
+.section_image_caption.dark a {
+	color:#ffffff;
+	text-decoration:underline;
+}
+.section_image_caption.light a {
+	color:#000000;
+	text-decoration:underline;
+}
+@media screen and (max-width: 480px) {
+	.section_image {
+		box-shadow:0 0 0!important;
+	}
+}
+
+/*
+ *
+ * Landing section
+ *
+ */
+.landing_section {
+	height:100vh;
+	width:100%;
+	text-align:center;
+	color:#ffffff;
+}
+.parallax_section {
+	position:fixed;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	background:url('../img/landing_bg.jpg');
+	background-size:100% 100%;
+	background-position:center;
+}
+.landing_section_header {
+	position:absolute;
+	top:40%;
+	left:0;
+	right:0;
+	font-size:80px;
+	font-weight:bold;
+}
+.landing_section_header_down_arrow {
+	position:absolute;
+	bottom:10%;
+	left:0;
+	right:0;
+	font-size:2em;
+}
+
+/*
+ *
+ * About section
+ *
+ */
+.about_section {
+	background-color:#ffffff;
+	color:#000000;
+}
+
+/*
+ *
+ * UI section
+ *
+ */
+.ui_section {
+	background:linear-gradient(#2ecc71, #208e4f);
+	color:#ffffff;
+	text-align:right;
+}
+
+/*
+ *
+ * Front end section
+ *
+ */
+.front_end_section {
+	background-color:#ffffff;
+}
+@media screen and (max-width: 480px) {
+	.section_image {
+		margin-top:30px;
+	}
+	.front_end_section .col-4 {
+		order:1;
+	}
+	.front_end_section .col-7 {
+		order:2;
+	}
+}
+
+/*
+ *
+ * Work section
+ *
+ */
+.work_section {
+	background-color:#808080;
+	color:#ffffff;
+	text-align:center;
+}
+
+/*
+ *
+ * Footer section 
+ *
+ */
+.footer_section {
+	padding:5%;
+	background-color:#404040;
+	color:#ffffff;
+	text-align:center;
+}
+.footer_section a {
+	color:#ffffff;
+	display:block;
+	padding:2%;
+}
+.footer_subsection {
+	background-color:#303030;
+	color:#ffffff;
+	font-size:14px;
+	font-weight:lighter;
+	padding:30px;
+	text-align:center;
+}
+.footer_subsection_brand {
+	display:block;
+	color:#ffffff;
+	font-size:28px;
+	font-weight:bold;
+	margin-bottom:20px;
+}
+.footer_subsection_brand:hover {
+	text-decoration:none;
+	color:#ffffff;
+}
+.footer_subsection_brand_n {
+	color:#fe8400;
+}
