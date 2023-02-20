@@ -404,12 +404,15 @@
 		<section class="section footer_subsection">
 	        <div class="container grid-xl">
 	        	<a class="footer_subsection_brand interactable" href="#">Justin.<span class="footer_subsection_brand_n">N</span></a>
-	    		<span class="footer_subsection_body_text">&copy; 2020 Justin Nguyen. All rights reserved.</span>
+			<span class="footer_subsection_body_text">&copy; <span id="year">2020</span> Justin Nguyen. All rights reserved.</span>
 	        </div>
 	    </section>
 	    <!-- End footer subsection -->
 	</section>
   	</div>
   	<!-- End content section -->
+	<script>
+		document.getElementById('year').innerHTML = new Date().getFullYear();
+	</script>
   </body>
 </html>
