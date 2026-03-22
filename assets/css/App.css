@@ -429,6 +429,26 @@ button:focus-visible {
   opacity: 0.9;
 }
 
+.about__subhead {
+  margin: var(--space-md) 0 var(--space-sm);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.about__list {
+  margin: 0 0 var(--space-md);
+  padding-left: 1.25rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
+.about__list li {
+  margin-bottom: 0.35rem;
+}
+
 /* Work bento */
 .work-bento {
   display: grid;
@@ -673,6 +693,59 @@ button:focus-visible {
 
 .timeline__bullets li:last-child {
   margin-bottom: 0;
+}
+
+/* Timeline — show first roles, expand rest */
+.timeline-wrap {
+  position: relative;
+}
+
+.timeline__toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  margin: var(--space-md) 0 0;
+  padding: 0.65rem 1.35rem;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.timeline__toggle:hover {
+  border-color: rgba(245, 158, 11, 0.45);
+  color: var(--color-accent);
+}
+
+.timeline__collapsible {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.5s var(--ease-out);
+}
+
+.timeline__collapsible.is-expanded {
+  grid-template-rows: 1fr;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline__collapsible {
+    transition: none;
+  }
+}
+
+.timeline__collapsible-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.timeline--continued {
+  margin-top: var(--space-sm);
 }
 
 /* Tools grid */

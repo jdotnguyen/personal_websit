@@ -110,10 +110,31 @@
     io.observe(strip);
   }
 
+  function initExperienceToggle() {
+    var panel = document.getElementById("experience-more");
+    var btn = document.getElementById("experience-toggle");
+    if (!panel || !btn) {
+      return;
+    }
+
+    function setExpanded(expanded) {
+      panel.classList.toggle("is-expanded", expanded);
+      btn.setAttribute("aria-expanded", expanded ? "true" : "false");
+      panel.setAttribute("aria-hidden", expanded ? "false" : "true");
+      btn.textContent = expanded ? "View less" : "View more";
+    }
+
+    btn.addEventListener("click", function () {
+      var expanded = btn.getAttribute("aria-expanded") === "true";
+      setExpanded(!expanded);
+    });
+  }
+
   function init() {
     setCopyrightYear();
     initScrollReveals();
     initStatCounters();
+    initExperienceToggle();
   }
 
   if (document.readyState === "loading") {
