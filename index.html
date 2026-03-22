@@ -1,461 +1,354 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" id="top">
   <head>
-  	<meta charset="utf-8">
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Justin Nguyen — Ottawa-based web developer. Portfolio, recent projects, and contact.">
-    <title>Justin Nguyen | Web Developer | Ottawa</title>
-    <link rel="icon" type="image/png" href="assets/img/favicon.png" />
-
-    <!-- Bootstrap CSS -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
-    <!-- Custom Font Import -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
-    <!-- Custom Page CSS -->
-    <link rel="stylesheet" href="assets/css/animate.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Justin Nguyen — Staff Frontend Engineer, Ottawa. 14+ years. NERIS, Angular, React, design systems, and AI-assisted tooling.">
+    <title>Justin Nguyen | Staff Frontend Engineer | Ottawa</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/App.css">
-
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
-
-    <!-- Custom page JS -->
-    <script src="assets/js/App.js"></script>
+    <script src="assets/js/App.js" defer></script>
   </head>
   <body>
-  	<a href="#main-content" class="skip-link">Skip to main content</a>
-  		<!-- Landing section -->
-  		<header class="section landing_section" role="banner">
-  			<div class="parallax_section">
-		    	<h1 class="landing_section_header animated fadeInDown">Justin.N</h1>
-		    	<button type="button" class="landing_section_header_down_arrow animated pulse infinite interactable" aria-label="Scroll to About Me section"><span class="fa fa-angle-down fa-2x" aria-hidden="true"></span></button>
-		    </div>
-		</header>
-		<!-- End landing section -->
-		<!-- About section -->
-		<main id="main-content">
-		<section class="section about_section" aria-labelledby="about-heading">
-	        <div class="container grid-xl">
-	        	<div class="columns">
-	        		<div class="column col-12">
-	        			<h2 id="about-heading" class="section_header">About Me</h2>
-	        			<div class="divider_bar dark"></div>
-	        			<div class="section_body_text">
-	        				<p>
-	        					Welcome to my personal website. My name is Justin Nguyen and I'm an Ottawa-based Web Developer. I love travelling, hanging out with friends, playing video games, working on my car, and above all else developing for the web. I have been in the web development industry for years and knew I'd want to pursue a career in this field since I was a child.
-	        				</p>
-	        			</div>
-	        		</div>
-	        	</div>
-	        </div>
-	    </section>
-	    <!-- End about section -->
-	    <!-- UI section -->
-        <section class="section ui_section" aria-labelledby="ui-heading">
-        	<div class="flex flex-wrap gap-y-10">
-				<div class="min-w-0 w-full md:w-1/2 pr-0 md:pr-40">
-					<h2 id="ui-heading" class="section_header">UI/UX Development</h2>
-					<div class="divider_bar light right"></div>
-					<div class="section_body_text">
-						<p>
-							To me, first impressions are always the most important. If you were to look at two competing apps/websites--regardless of functionality and reliability--chances are you'd choose the nicer looking package. I've always challenged myself by designing various UI/UX applications while trying to avoid compromising usability.
-						</p>
-					</div>
-				</div>
-				<div class="min-w-0 w-full md:w-1/2 section_image_collection">
-					<img class="section_image dark" src="assets/img/ui2.jpg" alt="Screenshot of the Aggregate Movie Puller app interface">
-					<small class="section_image_caption dark">My personal UI/API project using the TMDb API called <a href="https://github.com/jdotnguyen/aggregate_movie_puller_v2" target="_blank" rel="noopener noreferrer">Aggregate Movie Puller (AMP) v2</a>.</small>
-				</div>
-	    	</div>
-	    </section>
-	    <!-- End UI section -->
-	    <!-- Front end section -->
-	    <section class="section front_end_section" aria-labelledby="fe-heading">
-	    	<div class="flex flex-wrap gap-y-10">
-				<div class="min-w-0 w-full md:w-1/2 pr-0 md:pr-40">
-					<img class="section_image light" src="assets/img/fe1.jpg" alt="Screenshot of modular JavaScript and API code structure">
-					<small class="section_image_caption light">I divide each section/API call into separate files and JavaScript objects. <a href="https://github.com/jdotnguyen/aggregate_movie_puller_v2" target="_blank" rel="noopener noreferrer">Aggregate Movie Puller (AMP) v2</a>.</small>
-				</div>
-				<div class="min-w-0 w-full md:w-1/2 ">
-					<h2 id="fe-heading" class="section_header">Front End Development</h2>
-					<div class="divider_bar dark"></div>
-					<span class="section_body_text">A good design requires proper front end coding. I've worked with HTML, CSS, JavaScript, and many of their associated libraries and frameworks (Bootstrap, jQuery, Vue.js, AngularJS, Angular, React.js). Not only does code have to be properly documented and organized in each file, they also need to be modular for larger scale applications.</span>
-				</div>
-		    </div>
-		</section>
-		<!-- End front end section -->
-		<!-- Work section -->
-		<section class="section work_section" aria-labelledby="work-heading">
-	    	<div class="max-w-6xl mx-auto px-4">
-	    		<div class="mb-12">
-	    				<h2 id="work-heading" class="section_header">Recent Work</h2>
-	    				<div class="divider_bar light center"></div>
-	    				<p class="section_body_text">Here is a list of some personal projects I've done during my limited free time.</p>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
-                    <!-- Recent work 1 -->
-					<div class="recent_work_block">
-						<div class="flex flex-col gap-y-6">
-							<div class="min-w-0 w-full">
-							<a href="https://naughty-rosalind-1946d6.netlify.app/" target="_blank" rel="noopener noreferrer">
-								<img class="section_image dark clickable" src="assets/img/notes_react.png" alt="Screenshot of the Notes App interface">
-							</a>
-							</div>
-							<div class="min-w-0 w-full">
-							<div class="recent_work_text_body">
-								<h3 class="recent_work_text_header">Notes App</h3>
-								<a class="recent_work_text_tech" href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">React.js</a>
-								<a class="recent_work_text_tech" href="https://www.w3schools.com/html/" target="_blank" rel="noopener noreferrer">HTML</a>
-								<a class="recent_work_text_tech" href="https://www.w3schools.com/css/" target="_blank" rel="noopener noreferrer">CSS</a>
-								<a class="recent_work_text_tech" href="https://www.w3schools.com/js/" target="_blank" rel="noopener noreferrer">JavaScript</a>
-								<div class="recent_work_text_description">
-									This app was built to try out Google Firebase' backend tools. Firebase--for web apps at least-- has been 
-									a very easy-to-use SDK. Within about two hours I was able to build full registration/authentication/navigation 
-									to the app without having any prior knowledge to their backend tools beyond push notifications. This project is
-									ongoing and its source code can be found <a href="https://github.com/jdotnguyen/notes-app"
-										target="_blank" rel="noopener noreferrer">here</a>.
-								</div>
-							</div>
-							</div>
-						</div>
-					</div>
-					
-					<!-- Recent work 2-->
-					<div class="recent_work_block">
-						<div class="flex flex-col gap-y-6">
-							<div class="min-w-0 w-full">
-							<a href="https://ecstatic-neumann-fd5132.netlify.com/#now_playing" target="_blank" rel="noopener noreferrer">
-								<img class="section_image dark clickable" src="assets/img/amp.jpg" alt="Screenshot of Aggregate Movie Puller movie listings">
-							</a>
-							</div>
-							<div class="min-w-0 w-full">
-							<div class="recent_work_text_body">
-								<h3 class="recent_work_text_header">Aggregate Movie Puller (AMP) v2</h3>
-								<a class="recent_work_text_tech" href="https://jquery.com/" target="_blank" rel="noopener noreferrer">jQuery</a>
-								<a class="recent_work_text_tech" href="https://www.w3schools.com/html/" target="_blank" rel="noopener noreferrer">HTML</a>
-								<a class="recent_work_text_tech" href="https://www.w3schools.com/css/" target="_blank" rel="noopener noreferrer">CSS</a>
-								<a class="recent_work_text_tech" href="https://www.w3schools.com/js/" target="_blank" rel="noopener noreferrer">JavaScript</a>
-								<div class="recent_work_text_description">
-									This was a very early project that, even though the infrastructure is old, I'm very proud of it as it was my interpretation of a single page application (SPA). The states transfer over using native browser functions and reads query parameters as well. Feel free to check out the demo by clicking on the image above or the source code by clicking <a href="https://github.com/jdotnguyen/aggregate_movie_puller_v2" target="_blank" rel="noopener noreferrer">here</a>.
-								</div>
-							</div>
-							</div>
-						</div>
-					</div>
-					
-					<!-- Recent work 3 -->
-					<div class="recent_work_block">
-						<div class="flex flex-col gap-y-6">
-							<div class="min-w-0 w-full">
-							<a href="https://www.npmjs.com/package/spoonity-sdk" target="_blank" rel="noopener noreferrer">
-								<img class="section_image dark clickable" src="assets/img/spoonity.png" alt="Spoonity SDK package on npm">
-							</a>
-							</div>
-							<div class="min-w-0 w-full">
-							<div class="recent_work_text_body">
-								<h3 class="recent_work_text_header">Spoonity SDK</h3>
-								<a class="recent_work_text_tech" href="https://www.w3schools.com/js/" target="_blank" rel="noopener noreferrer">JavaScript</a>
-								<div class="recent_work_text_description">
-									This is an SDK I've been working on to help developers jumpstart their custom app development on the
-									Spoonity production API. Easily-identifiable method names and renamed JSON response cut out the
-									unnecessary data meant for internal use.
-								</div>
-							</div>
-							</div>
-						</div>
-					</div>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-					<!-- Recent work 4 -->
-					<div class="recent_work_block">
-						<div class="flex flex-col gap-y-6">
-							<div class="min-w-0 w-full">
-							<a href="https://github.com/jdotnguyen/spoonity-sdk-app" target="_blank" rel="noopener noreferrer">
-								<img class="section_image dark clickable" src="assets/img/nativescript.png" alt="Screenshot of the Spoonity NativeScript app">
-							</a>
-							</div>
-							<div class="min-w-0 w-full">
-							<div class="recent_work_text_body">
-								<h3 class="recent_work_text_header">Spoonity NativeScript App</h3>
-								<a class="recent_work_text_tech" href="https://angular.io/" target="_blank" rel="noopener noreferrer">Angular</a>
-								<a class="recent_work_text_tech" href="https://www.nativescript.org/" target="_blank" rel="noopener noreferrer">NativeScript</a>
-                                <a class="recent_work_text_tech" href="https://www.w3schools.com/js/" target="_blank" rel="noopener noreferrer">JavaScript</a>
-                                <a class="recent_work_text_tech" href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer">TypeScript</a>
-								<div class="recent_work_text_description">
-									Leveraging a slightly older version of my SDK, this is a full NativeScript app for both iOS and
-									Android
-									that I built to demonstrate how quick it was to churn out a functional app with the SDK in a matter
-									of
-									hours.
-									Login, store locations, rewards page are designed by myself while I designed the others to mimic
-									the
-									native iOS UI. Feel free to check out the source code by clicking <a
-										href="https://github.com/jdotnguyen/spoonity-sdk-app"
-										target="_blank" rel="noopener noreferrer">here</a>.
-								</div>
-							</div>
-							</div>
-						</div>
-					</div>
+    <header class="site-header">
+      <div class="site-header__inner layout-container layout-container--wide">
+        <a class="site-header__brand" href="#top" aria-label="Justin Nguyen — home">JN</a>
+        <nav class="site-nav" aria-label="Primary">
+          <ul class="site-nav__list">
+            <li><a href="#about">About</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#tools">Tools</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-					<!-- Recent work 5 -->
-					<div class="recent_work_block">
-						<div class="flex flex-col gap-y-6">
-							<div class="min-w-0 w-full">
-							<a href="https://www.npmjs.com/package/pokeapi_helper" target="_blank" rel="noopener noreferrer">
-								<img class="section_image dark clickable" src="assets/img/pokeapihelper.png" alt="PokéAPI Helper package on npm">
-							</a>
-							</div>
-							<div class="min-w-0 w-full">
-							<div class="recent_work_text_body">
-								<h3 class="recent_work_text_header">PokéAPI Helper</h3>
-								<a class="recent_work_text_tech" href="https://www.w3schools.com/js/" target="_blank" rel="noopener noreferrer">JavaScript</a>
-								<div class="recent_work_text_description">
-									This is a quick Javascript-based wrapper to help developers take advantage of the PokéAPI without needing 
-                                    to memorize their long endpoints. It is built using ES6 syntax and fetch. It is currently published on NPM and 
-                                    can be installed from there via `npm install pokeapi_helper`.
-								</div>
-							</div>
-							</div>
-						</div>
-					</div>
+    <main id="main-content">
+      <section class="hero hero--dark" aria-labelledby="hero-heading">
+        <div class="hero__bg" aria-hidden="true"></div>
+        <div class="hero__inner layout-container layout-container--wide">
+          <p class="hero__eyebrow">Staff Frontend Engineer · Ottawa, ON</p>
+          <h1 id="hero-heading" class="hero__display">
+            <span class="hero__display-line">Justin</span>
+            <span class="hero__display-line hero__display-line--accent">Nguyen</span>
+          </h1>
+          <p class="hero__lede">
+            Senior Lead Front End at <strong>ESO</strong> — architecting the <strong>NERIS Fire Incidents</strong> app,
+            modernizing legacy stacks, and shipping AI-assisted workflows (TensorFlow.js, LLM PR review, Copilot/Cursor enablement)
+            for teams across EMS and fire products.
+          </p>
+        </div>
+      </section>
 
-					<!-- Recent work 6 -->
-					<div class="recent_work_block">
-						<div class="flex flex-col gap-y-6">
-							<div class="min-w-0 w-full">
-							<a href="https://github.com/jdotnguyen/acnh_react_native" target="_blank" rel="noopener noreferrer">
-								<img class="section_image dark clickable" src="assets/img/acnh_reactnative2.png" alt="Screenshot of the Animal Crossing React Native app">
-							</a>
-							</div>
-							<div class="min-w-0 w-full">
-							<div class="recent_work_text_body">
-								<h3 class="recent_work_text_header">Animal Crossing New Horizons React Native App</h3>
-								<a class="recent_work_text_tech" href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">React.js</a>
-								<a class="recent_work_text_tech" href="https://reactnative.dev/docs/getting-started" target="_blank" rel="noopener noreferrer">React
-									Native</a>
-								<a class="recent_work_text_tech" href="https://www.w3schools.com/js/" target="_blank" rel="noopener noreferrer">JavaScript</a>
-								<div class="recent_work_text_description">
-									This app uses the Animal Crossing New Horizons (ACNH) API. The
-                                    UI is taking inspiration from the in-game phone while incorporating personal touches for non-existing features in-game such as
-                                    search, lists, etc. Feel free to check out the source code by clicking <a href="https://github.com/jdotnguyen/acnh_react_native"
-										target="_blank" rel="noopener noreferrer">here</a>.
-								</div>
-							</div>
-							</div>
-						</div>
-					</div>
+      <section class="stats-strip reveal-when-ready" aria-label="Career highlights">
+        <div class="layout-container layout-container--wide stats-strip__inner">
+          <div class="stat-block">
+            <p class="stat-block__value">
+              <span class="stat-block__num" data-count-target="14" data-count-suffix="+">0</span>
+            </p>
+            <p class="stat-block__label">Years in software</p>
+          </div>
+          <div class="stat-block">
+            <p class="stat-block__value">
+              <span class="stat-block__num" data-count-target="6" data-count-suffix="">0</span>
+            </p>
+            <p class="stat-block__label">Product teams enabled via Angular migration playbooks</p>
+          </div>
+          <div class="stat-block">
+            <p class="stat-block__value">
+              <span class="stat-block__num" data-count-target="2" data-count-suffix="">0</span>
+            </p>
+            <p class="stat-block__label">AI initiatives shipped (on-device ML + PR automation)</p>
+          </div>
+          <div class="stat-block">
+            <p class="stat-block__value">
+              <span class="stat-block__num" data-count-target="6" data-count-suffix="+">0</span>
+            </p>
+            <p class="stat-block__label">Organizations across public safety &amp; SaaS</p>
+          </div>
+        </div>
+      </section>
 
-					<!-- Recent work 7 -->
-					<div class="recent_work_block">
-						<div class="flex flex-col gap-y-6">
-							<div class="min-w-0 w-full">
-							<a href="https://github.com/jdotnguyen/tmdb-ionic-app" target="_blank" rel="noopener noreferrer">
-								<img class="section_image dark clickable" src="assets/img/ionic.png" alt="Screenshot of the TMDb Ionic app">
-							</a>
-							</div>
-							<div class="min-w-0 w-full">
-							<div class="recent_work_text_body">
-								<h3 class="recent_work_text_header">TMDb Ionic App</h3>
-								<a class="recent_work_text_tech" href="https://ionicframework.com/docs" target="_blank" rel="noopener noreferrer">Ionic</a>
-								<a class="recent_work_text_tech" href="https://angular.io/" target="_blank" rel="noopener noreferrer">Angular</a>
-								<a class="recent_work_text_tech" href="https://www.w3schools.com/html/" target="_blank" rel="noopener noreferrer">HTML</a>
-								<a class="recent_work_text_tech" href="https://www.w3schools.com/css/" target="_blank" rel="noopener noreferrer">CSS</a>
-								<a class="recent_work_text_tech" href="https://www.w3schools.com/js/" target="_blank" rel="noopener noreferrer">JavaScript</a>
-								<div class="recent_work_text_description">
-									Currently a work-in-progress, this app so far is a simple card-displaying mobile app built in Ionic 
-									which uses the TMDb API. Feel free to check out the source code by clicking <a
-										href="https://github.com/jdotnguyen/tmdb-ionic-app" target="_blank" rel="noopener noreferrer">here</a>.
-								</div>
-							</div>
-							</div>
-						</div>
-					</div>
+      <section id="about" class="section section--panel reveal-when-ready" aria-labelledby="about-heading">
+        <div class="layout-container layout-container--narrow section__inner">
+          <p class="section__kicker">About</p>
+          <h2 id="about-heading" class="section__title section__title--large">Building interfaces that teams can scale</h2>
+          <div class="prose prose--on-dark">
+            <p>
+              I’m a dedicated senior/staff-level engineer with <strong>14+ years</strong> across front-end and full-stack work,
+              with a strong lean toward <strong>DevOps automation</strong>, architecture, and raising the bar on quality.
+              At ESO I architect the newest <strong>NERIS Fire Incidents</strong> frontend, collaborate across data, DBA, and EMS teams,
+              and lead legacy overhauls with <strong>React, Redux, and Radix</strong> while keeping <strong>Angular</strong> estates current.
+            </p>
+            <p>
+              I’ve migrated flagship products from <strong>gulp + AngularJS</strong> to <strong>webpack + Angular 15</strong> with Confluence documentation
+              that let <strong>six product teams</strong> upgrade faster. I mentor juniors through seniors on <strong>AI tooling</strong> (Copilot, Cursor, Claude enterprise),
+              and I care about <strong>Figma standards</strong>, component libraries, Sonar/Snyk gating, and tests that match how teams ship.
+            </p>
+            <p class="prose__muted">
+              Outside of work: travel, games, and cars — reminders that software should work for real people in messy environments.
+            </p>
+          </div>
+        </div>
+      </section>
 
-					<!-- Recent work 8 -->
-					<!-- <div class="column col-6 col-xs-12">
-						<div class="recent_work_block">
-							<a href="https://github.com/jdotnguyen/reddit-ionic-app" target="_blank" rel="noopener noreferrer">
-								<img class="section_image dark clickable" src="assets/img/reddit_ionic.png">
-							</a>
-							<div class="recent_work_text_body">
-								<h3 class="recent_work_text_header">Reddit Ionic App</h3>
-								<a class="recent_work_text_tech" href="https://ionicframework.com/docs" target="_blank" rel="noopener noreferrer">Ionic</a>
-								<a class="recent_work_text_tech" href="https://angular.io/" target="_blank" rel="noopener noreferrer">Angular</a>
-								<a class="recent_work_text_tech" href="https://www.w3schools.com/html/" target="_blank" rel="noopener noreferrer">HTML</a>
-								<a class="recent_work_text_tech" href="https://www.w3schools.com/css/" target="_blank" rel="noopener noreferrer">CSS</a>
-								<a class="recent_work_text_tech" href="https://www.w3schools.com/js/" target="_blank" rel="noopener noreferrer">JavaScript</a>
-								<div class="recent_work_text_description">
-									Currently a work-in-progress, this app so far is a simple card-displaying mobile app built in Ionic
-									which uses the Reddit API. Feel free to check out the source code by clicking <a
-										href="https://github.com/jdotnguyen/reddit-ionic-app" target="_blank" rel="noopener noreferrer">here</a>.
-								</div>
-							</div>
-						</div>
-                    </div> -->
-                    
-                    <!-- Recent work 8 (Hacker News) -->
-					<div class="recent_work_block">
-						<div class="flex flex-col gap-y-6">
-							<div class="min-w-0 w-full">
-							<a href="https://5e0a453dcb62644be5b039d2--zen-neumann-00a5f6.netlify.com/" target="_blank" rel="noopener noreferrer">
-								<img class="section_image dark clickable" src="assets/img/hacker.jpg" alt="Screenshot of the Hacker News React dashboard">
-							</a>
-							</div>
-							<div class="min-w-0 w-full">
-							<div class="recent_work_text_body">
-								<h3 class="recent_work_text_header">Hacker News</h3>
-								<a class="recent_work_text_tech" href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">React.js</a>
-								<a class="recent_work_text_tech" href="https://www.w3schools.com/html/" target="_blank" rel="noopener noreferrer">HTML</a>
-								<a class="recent_work_text_tech" href="https://www.w3schools.com/css/" target="_blank" rel="noopener noreferrer">CSS</a>
-								<a class="recent_work_text_tech" href="https://www.w3schools.com/js/" target="_blank" rel="noopener noreferrer">JavaScript</a>
-								<a class="recent_work_text_tech" href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer">TypeScript</a>
-								<div class="recent_work_text_description">
-									This was one of my more recent collaboration projects to learn some basic React.js. The UI is a simple
-									white dashboard with news cards. I chose the card format because of the API provided very little in the
-									form of consumable data in the response body. Feel free to check out the demo by clicking on the image
-									above or the source code by clicking <a href="https://github.com/jdotnguyen/hackernews"
-										target="_blank" rel="noopener noreferrer">here</a>.
-								</div>
-							</div>
-							</div>
-						</div>
-					</div>
+      <section id="work" class="section section--dark reveal-when-ready" aria-labelledby="work-heading">
+        <div class="layout-container layout-container--wide section__inner">
+          <header class="section__header-row">
+            <div>
+              <p class="section__kicker">Portfolio</p>
+              <h2 id="work-heading" class="section__title section__title--large">Selected work</h2>
+            </div>
+            <p class="section__intro section__intro--right">
+              Side projects that mirror how I structure production apps—clear modules, honest UX, and room to grow.
+            </p>
+          </header>
 
-					<!-- Recent work 9 -->
-					<div class="recent_work_block">
-						<div class="flex flex-col gap-y-6">
-							<div class="min-w-0 w-full">
-							<a href="https://apps.apple.com/us/app/the-ottawa-rules/id1104004722" target="_blank" rel="noopener noreferrer">
-								<img class="section_image dark clickable" src="assets/img/ocdr.png" alt="OCDR Ottawa Rules app on the App Store">
-							</a>
-							</div>
-							<div class="min-w-0 w-full">
-							<div class="recent_work_text_body">
-								<h3 class="recent_work_text_header">OCDR Ottawa Rules App</h3>
-								<a class="recent_work_text_tech" href="https://angular.io/" target="_blank" rel="noopener noreferrer">Angular</a>
-								<div class="recent_work_text_description">
-									Now-defunct hybrid information app. Small collaboration project meant as a quick guide to some Ottawa health-related subjects. Work done being icon design and some UI design.
-								</div>
-							</div>
-							</div>
-						</div>
-					</div>
+          <div class="work-bento">
+            <article class="work-bento__card work-bento__card--span-2" aria-labelledby="work-amp">
+              <a class="work-bento__media" href="https://github.com/jdotnguyen/aggregate_movie_puller_v2" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="assets/img/ui2.jpg"
+                  width="800"
+                  height="450"
+                  alt="Aggregate Movie Puller interface showing movie search and poster grid."
+                  loading="lazy"
+                >
+                <span class="work-bento__media-veil" aria-hidden="true"></span>
+                <span class="work-bento__media-title">Aggregate Movie Puller <span class="work-bento__arrow" aria-hidden="true">↗</span></span>
+              </a>
+              <div class="work-bento__content">
+                <h3 id="work-amp" class="work-bento__title">Movie discovery UI with TMDb</h3>
+                <dl class="work-meta work-meta--compact">
+                  <div class="work-meta__row">
+                    <dt>Problem</dt>
+                    <dd>Ship readable movie discovery without tangled fetches or DOM soup.</dd>
+                  </div>
+                  <div class="work-meta__row">
+                    <dt>Outcome</dt>
+                    <dd>Modular JS, keyboard-friendly UI, pattern you can extend with new endpoints.</dd>
+                  </div>
+                </dl>
+              </div>
+            </article>
 
-					<!-- Recent work 10 -->
-					<div class="recent_work_block">
-						<div class="flex flex-col gap-y-6">
-							<div class="min-w-0 w-full">
-							<a href="https://www.deluxecanopy.ca/" target="_blank" rel="noopener noreferrer">
-								<img class="section_image dark clickable" src="assets/img/dc.png" alt="Screenshot of the Deluxe Canopy Shopify store">
-							</a>
-							</div>
-							<div class="min-w-0 w-full">
-							<div class="recent_work_text_body">
-								<h3 class="recent_work_text_header">Deluxe Canopy Shopify Website</h3>
-								<a class="recent_work_text_tech" href="https://help.shopify.com/en/themes/liquid/basics" target="_blank" rel="noopener noreferrer">Shopify Liquid</a>
-								<a class="recent_work_text_tech" href="https://www.w3schools.com/html/" target="_blank" rel="noopener noreferrer">HTML</a>
-								<a class="recent_work_text_tech" href="https://www.w3schools.com/css/" target="_blank" rel="noopener noreferrer">CSS</a>
-								<a class="recent_work_text_tech" href="https://github.com/Shopify/Timber" target="_blank" rel="noopener noreferrer">Shopify Timber</a>
-								<div class="recent_work_text_description">
-									An ongoing project with an old client. I provided the original design and store functionality and it has evolved since along with branding. Emphasis was more on learning the Shopify Liquid syntax.
-								</div>
-							</div>
-							</div>
-						</div>
-					</div>
+            <article class="work-bento__card" aria-labelledby="work-acnh">
+              <div class="work-bento__media work-bento__media--static">
+                <img
+                  src="assets/img/acnh_reactnative.png"
+                  width="800"
+                  height="450"
+                  alt="React Native Animal Crossing companion app showing creature list and detail UI."
+                  loading="lazy"
+                >
+                <span class="work-bento__media-veil" aria-hidden="true"></span>
+                <span class="work-bento__media-title">ACNH companion</span>
+              </div>
+              <div class="work-bento__content">
+                <h3 id="work-acnh" class="work-bento__title">React Native game data app</h3>
+                <dl class="work-meta work-meta--compact">
+                  <div class="work-meta__row">
+                    <dt>Focus</dt>
+                    <dd>Lists, detail views, and touch-first patterns for dense catalogs.</dd>
+                  </div>
+                </dl>
+              </div>
+            </article>
 
-					<!-- Recent work 11 -->
-					<div class="recent_work_block">
-						<div class="flex flex-col gap-y-6">
-							<div class="min-w-0 w-full">
-							<a href="https://musing-jennings-d35c8c.netlify.com/" target="_blank" rel="noopener noreferrer">
-								<img class="section_image dark clickable" src="assets/img/info.jpg" alt="Screenshot of the car infotainment UI concept">
-							</a>
-							</div>
-							<div class="min-w-0 w-full">
-							<div class="recent_work_text_body">
-								<h3 class="recent_work_text_header">Car Infotainment UI</h3>
-								<a class="recent_work_text_tech" href="https://jquery.com/" target="_blank" rel="noopener noreferrer">jQuery</a>
-								<a class="recent_work_text_tech" href="https://www.w3schools.com/html/" target="_blank" rel="noopener noreferrer">HTML</a>
-								<a class="recent_work_text_tech" href="https://www.w3schools.com/css/" target="_blank" rel="noopener noreferrer">CSS</a>
-								<a class="recent_work_text_tech" href="https://www.w3schools.com/js/" target="_blank" rel="noopener noreferrer">JavaScript</a>
-								<div class="recent_work_text_description">
-									I've noticed that a lot of car manufacturers built overly complicated UIs that were sluggish and
-									confusing. This UI I did years ago was what I thought would be an optimal touch-friendly UI for vehicles
-									with four simple entertainment, navigation, warnings, and settings buttons. Feel free to check out the
-									demo by clicking on the image
-									above or the source code by clicking <a href="https://github.com/jdotnguyen/car_infotainment_ui"
-										target="_blank" rel="noopener noreferrer">here</a>.
-								</div>
-							</div>
-							</div>
-						</div>
-					</div>
+            <article class="work-bento__card work-bento__card--wide" aria-labelledby="work-amp-arch">
+              <a class="work-bento__media" href="https://github.com/jdotnguyen/aggregate_movie_puller_v2" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="assets/img/fe1.jpg"
+                  width="800"
+                  height="450"
+                  alt="Editor view of modular JavaScript files for API and UI sections."
+                  loading="lazy"
+                >
+                <span class="work-bento__media-veil" aria-hidden="true"></span>
+                <span class="work-bento__media-title">AMP — architecture <span class="work-bento__arrow" aria-hidden="true">↗</span></span>
+              </a>
+              <div class="work-bento__content">
+                <h3 id="work-amp-arch" class="work-bento__title">Scalable client-side organization</h3>
+                <dl class="work-meta work-meta--compact">
+                  <div class="work-meta__row">
+                    <dt>Approach</dt>
+                    <dd>Explicit module seams between API, view, and presentation—ready for tests and team onboarding.</dd>
+                  </div>
+                </dl>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
 
-					<!-- Recent work 12 -->
-					<div class="recent_work_block">
-						<div class="flex flex-col gap-y-6">
-							<div class="min-w-0 w-full">
-							<a href="https://determined-benz-baefcf.netlify.com/" target="_blank" rel="noopener noreferrer">
-								<img class="section_image dark clickable" src="assets/img/rawg.jpg" alt="Screenshot of the RAWG Angular app">
-							</a>
-							</div>
-							<div class="min-w-0 w-full">
-								<div class="recent_work_text_body">
-									<h3 class="recent_work_text_header">RAWG Angular</h3>
-									<a class="recent_work_text_tech" href="https://angular.io/" target="_blank" rel="noopener noreferrer">Angular</a>
-									<a class="recent_work_text_tech" href="https://www.w3schools.com/html/" target="_blank" rel="noopener noreferrer">HTML</a>
-									<a class="recent_work_text_tech" href="https://www.w3schools.com/css/" target="_blank" rel="noopener noreferrer">CSS</a>
-									<a class="recent_work_text_tech" href="https://www.w3schools.com/js/" target="_blank" rel="noopener noreferrer">JavaScript</a>
-									<a class="recent_work_text_tech" href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer">TypeScript</a>
-									<a class="recent_work_text_tech" href="https://rawg.io/apidocs" target="_blank" rel="noopener noreferrer">RAWG API</a>
-									<div class="recent_work_text_description">
-										Work in progress. In search of a front end project with a free API that provided images, I luckily found
-										the video game API called RAWG. Aside from images, it provided plenty of data including genres,
-										publishers, developers, ratings, reviews, and much more. Feel free to check out the demo by clicking on
-										the image
-										above or the source code by clicking <a href="https://github.com/jdotnguyen/rawg_angular"
-											target="_blank" rel="noopener noreferrer">here</a>.
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-	    		</div>
-		    </div>
-		</section>
-		<!-- End work section -->
-		</main>
-		<footer>
-		<section class="section footer_section" aria-labelledby="connect-heading">
-	        <div class="container grid-xl">
-	    		<h2 id="connect-heading" class="section_header">Connect With Me</h2>
-	    		<div class="divider_bar light center"></div>
-	    		<div class="flex gap-x-10 justify-center">
-	    			<a class="interactable" href="https://github.com/jdotnguyen" target="_blank" rel="noopener noreferrer" aria-label="Justin Nguyen on GitHub (opens in new tab)"><span class="fa fa-github fa-5x" aria-hidden="true"></span></a>
-	    			<a class="interactable" href="https://www.linkedin.com/in/justin-nguyen-7a054159/" target="_blank" rel="noopener noreferrer" aria-label="Justin Nguyen on LinkedIn (opens in new tab)"><span class="fa fa-linkedin-square fa-5x" aria-hidden="true"></span></a>
-	    		</div>
-	        </div>
-	    </section>
-	    <!-- End footer section -->
-	    <!-- Footer subsection -->
-		<section class="section footer_subsection">
-	        <div class="container grid-xl">
-	        	<a class="footer_subsection_brand interactable" href="#" aria-label="Back to top">Justin.<span class="footer_subsection_brand_n">N</span></a>
-			<p class="footer_subsection_body_text">&copy; <span id="year">2020</span> Justin Nguyen. All rights reserved.</p>
-	        </div>
-	    </section>
-	    <!-- End footer subsection -->
-		</footer>
-  	<!-- End page -->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-	<script>
-		document.getElementById('year').innerHTML = new Date().getFullYear();
-	</script>
+      <section id="experience" class="section section--panel reveal-when-ready" aria-labelledby="experience-heading">
+        <div class="layout-container layout-container--wide section__inner">
+          <p class="section__kicker">Experience</p>
+          <h2 id="experience-heading" class="section__title section__title--large">Where I’ve shipped</h2>
+          <p class="section__intro section__intro--margin">Enterprise SaaS, public safety, and high-traffic mobile — always with an eye on craft and velocity.</p>
+
+          <ol class="timeline">
+            <li class="timeline__item">
+              <article class="timeline__card" aria-labelledby="exp-eso-lead">
+                <header class="timeline__head">
+                  <h3 id="exp-eso-lead" class="timeline__role">Senior Lead Front End Developer, Fire Products</h3>
+                  <p class="timeline__company">ESO · Ottawa, ON</p>
+                  <p class="timeline__dates"><time datetime="2024-06">June 2024</time> – Present</p>
+                </header>
+                <ul class="timeline__bullets">
+                  <li>Architecting the NERIS Fire Incidents frontend and contributing to backend design for flagship fire products.</li>
+                  <li>TensorFlow.js behaviour model to suggest field values from usage patterns; AI webhook on PRs for code suggestions (4.1-mini).</li>
+                  <li>Leading legacy rewrites with React, Redux, Radix; React Native path for iOS/Android parity; Angular 21+ with Herodev support.</li>
+                  <li>Mentoring all levels on Copilot, Cursor, and Claude enterprise (4.5/4.6 Opus, 4.5 Sonnet).</li>
+                </ul>
+              </article>
+            </li>
+            <li class="timeline__item">
+              <article class="timeline__card" aria-labelledby="exp-eso-sr">
+                <header class="timeline__head">
+                  <h3 id="exp-eso-sr" class="timeline__role">Senior Front End Developer</h3>
+                  <p class="timeline__company">ESO · Ottawa, ON</p>
+                  <p class="timeline__dates"><time datetime="2022-03">March 2022</time> – <time datetime="2024-06">June 2024</time></p>
+                </header>
+                <ul class="timeline__bullets">
+                  <li>Lead FE for NERIS Fire Incidents; established a frontend forum for practices across teams.</li>
+                  <li>Migrated NFIRS from gulp AngularJS to webpack Angular 15 with Confluence docs — six teams adopted the playbook.</li>
+                  <li>Figma design standards, shared component library, Azure serverless decomposition, E2E/unit tests, Sonar/Snyk gating.</li>
+                </ul>
+              </article>
+            </li>
+            <li class="timeline__item">
+              <article class="timeline__card" aria-labelledby="exp-fe">
+                <header class="timeline__head">
+                  <h3 id="exp-fe" class="timeline__role">Senior Front End Developer</h3>
+                  <p class="timeline__company">Field Effect Software · Ottawa, ON</p>
+                  <p class="timeline__dates"><time datetime="2020-06">June 2020</time> – <time datetime="2022-03">March 2022</time></p>
+                </header>
+                <ul class="timeline__bullets">
+                  <li>Greenfield React Cyber Range UI replacing GWT; Redux + TanStack tables/routing; WebSockets for live VM status.</li>
+                  <li>Company-wide component library; Jest/Enzyme and WebdriverIO; Bamboo/Bitbucket automation.</li>
+                </ul>
+              </article>
+            </li>
+            <li class="timeline__item">
+              <article class="timeline__card" aria-labelledby="exp-spoonity">
+                <header class="timeline__head">
+                  <h3 id="exp-spoonity" class="timeline__role">Full Stack &amp; Front End Developer</h3>
+                  <p class="timeline__company">Spoonity · Ottawa, ON</p>
+                  <p class="timeline__dates"><time datetime="2018-04">April 2018</time> – <time datetime="2020-06">June 2020</time></p>
+                </header>
+                <ul class="timeline__bullets">
+                  <li>Symfony APIs, rate limiting that cut compute costs materially; AWS SNS push via APNs/Firebase.</li>
+                  <li>AngularJS → Angular upgrades, Google Maps &amp; partner SDK integrations, Ionic mobile, internal SDK for Spoonity API.</li>
+                </ul>
+              </article>
+            </li>
+            <li class="timeline__item">
+              <article class="timeline__card" aria-labelledby="exp-gfi">
+                <header class="timeline__head">
+                  <h3 id="exp-gfi" class="timeline__role">UI Developer / Software Developer</h3>
+                  <p class="timeline__company">GFI Systems · Regina, SK</p>
+                  <p class="timeline__dates"><time datetime="2014-07">July 2014</time> – <time datetime="2018-04">April 2018</time></p>
+                </header>
+                <ul class="timeline__bullets">
+                  <li>Led product redesign from desktop to web; sole FE on main SaaS apps; WordPress corporate site.</li>
+                </ul>
+              </article>
+            </li>
+            <li class="timeline__item">
+              <article class="timeline__card" aria-labelledby="exp-early">
+                <header class="timeline__head">
+                  <h3 id="exp-early" class="timeline__role">Contract &amp; Web Developer</h3>
+                  <p class="timeline__company">bv02, YouAchieve · Ottawa, ON</p>
+                  <p class="timeline__dates"><time datetime="2011-05">2011</time> – <time datetime="2017-10">2017</time></p>
+                </header>
+                <ul class="timeline__bullets">
+                  <li>WordPress/Sitecore delivery, client UI support, and early-career full-stack exposure.</li>
+                </ul>
+              </article>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="tools" class="section section--dark reveal-when-ready" aria-labelledby="tools-heading">
+        <div class="layout-container layout-container--wide section__inner">
+          <header class="section__header-row">
+            <div>
+              <p class="section__kicker">Toolkit</p>
+              <h2 id="tools-heading" class="section__title section__title--large">Tools &amp; focus</h2>
+            </div>
+          </header>
+          <p class="section__intro tools__lede">
+            Enterprise <strong>Angular</strong> and <strong>.NET</strong> stacks, plus <strong>React</strong> ecosystems where I lead greenfield and migrations — aligned with how I ship at ESO and Field Effect.
+          </p>
+          <ul class="tools-grid" aria-label="Technologies and practices">
+            <li class="tools-grid__item">Angular &amp; AngularJS</li>
+            <li class="tools-grid__item">React &amp; React Native</li>
+            <li class="tools-grid__item">TypeScript &amp; JavaScript</li>
+            <li class="tools-grid__item">C# &amp; .NET</li>
+            <li class="tools-grid__item">Redux &amp; Radix UI</li>
+            <li class="tools-grid__item">Azure &amp; DevOps</li>
+            <li class="tools-grid__item">Node.js</li>
+            <li class="tools-grid__item">Figma collaboration</li>
+            <li class="tools-grid__item">E2E &amp; unit testing</li>
+            <li class="tools-grid__item">TensorFlow.js</li>
+            <li class="tools-grid__item">Git / Azure DevOps</li>
+            <li class="tools-grid__item">Cursor &amp; Copilot</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact" class="site-footer reveal-when-ready">
+      <div class="layout-container layout-container--narrow site-footer__inner">
+        <p class="site-footer__kicker">Contact</p>
+        <h2 class="site-footer__title">Let’s work together</h2>
+        <p class="site-footer__lede">
+          Open to staff / principal frontend conversations, architecture reviews, and leadership roles where craft and platform thinking matter.
+        </p>
+        <p class="site-footer__email">
+          <a href="mailto:justin_nguyen@outlook.com">justin_nguyen@outlook.com</a>
+        </p>
+        <ul class="social-list">
+          <li>
+            <a class="social-link" href="https://github.com/jdotnguyen" target="_blank" rel="noopener noreferrer">
+              <span class="social-link__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" focusable="false"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </span>
+              <span>GitHub</span>
+              <span class="visually-hidden">(opens in new tab)</span>
+            </a>
+          </li>
+          <li>
+            <a class="social-link" href="https://www.linkedin.com/in/justin-nguyen-7a054159/" target="_blank" rel="noopener noreferrer">
+              <span class="social-link__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" focusable="false"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </span>
+              <span>LinkedIn</span>
+              <span class="visually-hidden">(opens in new tab)</span>
+            </a>
+          </li>
+          <li>
+            <a class="social-link" href="https://www.justinnguyen.ca/" target="_blank" rel="noopener noreferrer">
+              <span>justinnguyen.ca</span>
+              <span class="visually-hidden">(opens in new tab)</span>
+            </a>
+          </li>
+        </ul>
+        <p class="site-footer__meta">
+          <a class="back-to-top" href="#top">Back to top</a>
+          <span class="site-footer__sep" aria-hidden="true">·</span>
+          <span>&copy; <span id="year"></span> Justin Nguyen</span>
+        </p>
+      </div>
+    </footer>
   </body>
 </html>
