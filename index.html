@@ -3,203 +3,296 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Justin Nguyen — Senior Frontend Engineer, Ottawa. 15+ years. NERIS, Angular, React, design systems, and AI-assisted tooling.">
+    <meta name="description" content="Justin Nguyen, senior frontend engineer in Ottawa. 15+ years building Angular and React apps, design systems, and AI-assisted tooling.">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#060a18">
     <title>Justin Nguyen | Senior Frontend Engineer | Ottawa</title>
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/App.css">
     <script src="assets/js/App.js" defer></script>
   </head>
-  <body>
+  <body data-ambient="tail">
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
+    <div class="ambient-strip" aria-hidden="true"></div>
+
     <header class="site-header">
-      <div class="site-header__inner layout-container layout-container--wide">
-        <a class="site-header__brand" href="#top" aria-label="Justin Nguyen — home">JN</a>
+      <div class="site-header__inner wrap">
+        <a class="site-header__brand" href="#top" aria-label="Justin Nguyen, back to top">JN</a>
         <nav class="site-nav" aria-label="Primary">
           <ul class="site-nav__list">
-            <!-- <li><a href="#about">About</a></li> -->
             <li><a href="#work">Work</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#tools">Tools</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
+        <p class="site-header__clock" aria-label="Local time in Ottawa">
+          <span>Ottawa</span> <time id="ottawa-time">--:--</time>
+        </p>
       </div>
     </header>
 
     <main id="main-content">
-      <section class="hero hero--dark" aria-labelledby="hero-heading">
-        <div class="hero__bg" aria-hidden="true"></div>
-        <div class="hero__inner layout-container layout-container--wide">
-          <p class="hero__eyebrow">Senior Frontend Engineer · Ottawa, ON</p>
-          <h1 id="hero-heading" class="hero__display">
-            <span class="hero__display-line">Justin</span>
-            <span class="hero__display-line hero__display-line--accent">Nguyen</span>
+      <!-- Hero: long-exposure night drive -->
+      <section class="hero" aria-labelledby="hero-heading" data-ambient-zone="tail">
+        <canvas class="hero__canvas" id="trails" aria-hidden="true"></canvas>
+        <div class="hero__shade" aria-hidden="true"></div>
+        <div class="hero__inner wrap">
+          <p class="hero__role">Senior frontend engineer in Ottawa</p>
+          <h1 id="hero-heading" class="hero__name">
+            <span class="hero__name-line">Justin</span>
+            <span class="hero__name-line">Nguyen</span>
           </h1>
           <p class="hero__lede">
-            Senior Lead Front End, Fire Products at <strong>ESO</strong> — architecting the <strong>NERIS Fire Incidents</strong> frontend,
-            modernizing legacy stacks, and shipping AI-assisted workflows (TensorFlow.js, LLM PR review, Copilot/Cursor enablement)
-            for teams across various products.
+            I lead frontend for Fire Products at <strong>ESO</strong>, where I architected the
+            <strong>NERIS Fire Incidents</strong> app, modernize legacy Angular, and bring AI into
+            the everyday workflow. After hours I build the things I wish existed.
           </p>
+          <div class="hero__actions">
+            <a class="btn btn--light" href="#work">See the work</a>
+            <a class="btn btn--ghost" href="mailto:hello@justinnguyen.ca">Email me</a>
+          </div>
         </div>
+        <p class="hero__hint" aria-hidden="true">Move your pointer to steer</p>
       </section>
 
-      <section class="stats-strip reveal-when-ready" aria-label="Career highlights">
-        <div class="layout-container layout-container--wide stats-strip__inner">
-          <div class="stat-block">
-            <p class="stat-block__value">
-              <span class="stat-block__num" data-count-target="15" data-count-suffix="+">0</span>
-            </p>
-            <p class="stat-block__label">Years in software</p>
-          </div>
-          <div class="stat-block">
-            <p class="stat-block__value">
-              <span class="stat-block__num" data-count-target="2" data-count-suffix="">0</span>
-            </p>
-            <p class="stat-block__label">AI initiatives shipped (on-device ML + PR automation)</p>
-          </div>
-          <div class="stat-block">
-            <p class="stat-block__value">
-              <span class="stat-block__num" data-count-target="6" data-count-suffix="+">0</span>
-            </p>
-            <p class="stat-block__label">Organizations across public safety &amp; SaaS</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- <section id="about" class="section section--panel reveal-when-ready" aria-labelledby="about-heading">
-        <div class="layout-container layout-container--narrow section__inner">
-          <p class="section__kicker">About</p>
-          <h2 id="about-heading" class="section__title section__title--large">Building interfaces that teams can scale</h2>
-          <div class="prose prose--on-dark">
-            <p>
-              I’m a dedicated senior/staff-level engineer with <strong>15+ years</strong> across full-stack work,
-              with a strong lean toward <strong>frontend development</strong>, architecture, and raising the bar on quality.
-              At ESO I architect the newest <strong>NERIS Fire Incidents</strong> frontend, collaborate across various teams,
-              and lead legacy overhauls of <strong>AngularJS</strong> apps while keeping modern <strong>Angular</strong> apps current.
-            </p>
-            <p>
-              I’ve built optimized, cutting-edge Angular and React applications while migrating legacy flagship products from <strong>gulp + AngularJS</strong> to <strong>webpack + Angular 21+</strong> with supporting documentation
-              that let <strong>various product teams</strong> upgrade faster. I mentor juniors through seniors on <strong>AI tooling</strong> (CoPilot, Cursor, Claude Code),
-              and I care about <strong>details down to the pixel</strong>, component libraries, Sonar/Snyk gating, and tests to maintain high quality deployments.
-            </p>
-            <p class="prose__muted">
-              Outside of work: travel, games, and cars — reminders that software should work for real people in messy environments.
-            </p>
-          </div>
-        </div>
-      </section> -->
-
-      <section id="work" class="section section--dark reveal-when-ready" aria-labelledby="work-heading">
-        <div class="layout-container layout-container--wide section__inner">
-          <header class="section__header-row">
-            <div>
-              <p class="section__kicker">Portfolio</p>
-              <h2 id="work-heading" class="section__title section__title--large">Selected work</h2>
-            </div>
-            <p class="section__intro section__intro--right">
-              Side projects that mirror how I structure production apps—clear modules, honest UX, and room to grow.
+      <!-- Work -->
+      <section id="work" class="work" aria-labelledby="work-heading">
+        <div class="wrap">
+          <header class="work__head">
+            <h2 id="work-heading" class="section-title">Side projects</h2>
+            <p class="work__intro">
+              Three projects, three very different users: a driver who can only glance,
+              someone flipping through 1,000 Pokémon on a phone, and a developer who needs
+              components that work for everyone. Each demo below is live, so try it.
             </p>
           </header>
-
-          <div class="work-bento">
-            <article class="work-bento__card work-bento__card--span-2" aria-labelledby="work-amp">
-              <a class="work-bento__media" href="https://github.com/jdotnguyen/aggregate_movie_puller_v2" target="_blank" rel="noopener noreferrer">
-                <img
-                  src="assets/img/ui2.jpg"
-                  width="800"
-                  height="450"
-                  alt="Aggregate Movie Puller interface showing movie search and poster grid."
-                  loading="lazy"
-                >
-                <span class="work-bento__media-veil" aria-hidden="true"></span>
-                <span class="work-bento__media-title">Aggregate Movie Puller <span class="work-bento__arrow" aria-hidden="true">↗</span></span>
-              </a>
-              <div class="work-bento__content">
-                <h3 id="work-amp" class="work-bento__title">Movie discovery UI with TMDb API</h3>
-                <dl class="work-meta work-meta--compact">
-                  <div class="work-meta__row">
-                    <dt>Focus</dt>
-                    <dd>Build a movie discovery UI with the TMDb API. Maximize accessibility and usability with search, tag links, actor links, and related movies to increase user engagement. Mobile responsive.</dd>
-                  </div>
-                </dl>
-              </div>
-            </article>
-
-            <article class="work-bento__card" aria-labelledby="work-acnh">
-              <a class="work-bento__media" href="https://github.com/jdotnguyen/acnh_react_native" target="_blank" rel="noopener noreferrer">
-                <img
-                  src="assets/img/acnh_reactnative.png"
-                  width="800"
-                  height="450"
-                  alt="React Native Animal Crossing companion app showing creature list and detail UI."
-                  loading="lazy"
-                >
-                <span class="work-bento__media-veil" aria-hidden="true"></span>
-                <span class="work-bento__media-title">ACNH companion app <span class="work-bento__arrow" aria-hidden="true">↗</span></span>
-              </a>
-              <div class="work-bento__content">
-                <h3 id="work-acnh" class="work-bento__title">React Native game data app</h3>
-                <dl class="work-meta work-meta--compact">
-                  <div class="work-meta__row">
-                    <dt>Focus</dt>
-                    <dd>Lists, detail views, and touch-first patterns for dense catalogs. The UI was my own take on the existing one found in Animal Crossing New Horizons.</dd>
-                  </div>
-                </dl>
-              </div>
-            </article>
-
-            <article class="work-bento__card work-bento__card--wide" aria-labelledby="work-ocdr">
-              <a class="work-bento__media" href="#" target="_blank" rel="noopener noreferrer">
-                <img
-                  loading="lazy"
-                  src="assets/img/ocdr.png"
-                  alt="Icon for the OCDR application"
-                >
-                <span class="work-bento__media-veil" aria-hidden="true"></span>
-                <span class="work-bento__media-title">OCDR — Centralized repository <span class="work-bento__arrow" aria-hidden="true">↗</span></span>
-              </a>
-              <div class="work-bento__content">
-                <h3 id="work-ocdr" class="work-bento__title">OCDR — Central information for hospital staff &amp; Ottawa residents</h3>
-                <dl class="work-meta work-meta--compact">
-                  <div class="work-meta__row">
-                    <dt>Problem</dt>
-                    <dd>There was a lack of centralized information for hospital staff and Ottawa residents. Information was spread among various websites and intranets.</dd>
-                  </div>
-                  <div class="work-meta__row">
-                    <dt>Outcome</dt>
-                    <dd>Built to provide a single source of truth for hospital teams and the Ottawa public, OCDR centralizes critical local health information so staff and residents can access up‑to‑date information quickly and reliably.</dd>
-                  </div>
-                </dl>
-              </div>
-            </article>
-          </div>
         </div>
+
+        <!-- Project: Car infotainment -->
+        <article class="project project--car" aria-labelledby="car-title" data-ambient-zone="car">
+          <div class="wrap">
+            <div class="project__head">
+              <h3 id="car-title" class="project__title">Car Infotainment UI</h3>
+              <p class="project__tagline">What if BMW’s iDrive NBT screen had been designed for fingers instead of a click wheel?</p>
+            </div>
+
+            <figure class="dash">
+              <div class="dash__bezel">
+                <div class="dash__screen" id="dash-screen">
+                  <img id="dash-img" src="assets/img/work/car-home.webp" width="1600" height="600"
+                       alt="Main menu with eight large tiles and a split-screen map on the right.">
+                </div>
+              </div>
+              <div class="dash__keys" role="tablist" aria-label="Infotainment screens">
+                <button type="button" role="tab" class="dash__key" aria-selected="true" aria-controls="dash-screen"
+                  data-src="assets/img/work/car-home.webp" data-alt="Main menu with eight large tiles and a split-screen map on the right."
+                  data-caption="Main menu. Every tile shows live status, and the split screen on the right is a swipeable carousel.">Menu</button>
+                <button type="button" role="tab" class="dash__key" aria-selected="false" aria-controls="dash-screen" tabindex="-1"
+                  data-src="assets/img/work/car-navigation-3d.webp" data-alt="3D turn-by-turn navigation through a procedurally drawn Ottawa, turning left onto Elgin Street."
+                  data-caption="Navigation. A procedurally drawn Ottawa with real shortest-path routing and spoken turn-by-turn guidance.">Nav</button>
+                <button type="button" role="tab" class="dash__key" aria-selected="false" aria-controls="dash-screen" tabindex="-1"
+                  data-src="assets/img/work/car-vehicle-live-data.webp" data-alt="Live vehicle data with ring gauges for RPM, speed, coolant, battery voltage, engine load and throttle."
+                  data-caption="Vehicle. Ring gauges for RPM, coolant, voltage and load, fed in real time by the simulated drive.">Vehicle</button>
+                <button type="button" role="tab" class="dash__key" aria-selected="false" aria-controls="dash-screen" tabindex="-1"
+                  data-src="assets/img/work/car-check-control.webp" data-alt="Check Control warnings colour-coded by severity, with swipe to dismiss."
+                  data-caption="Check Control. Warnings ranked by severity: tap to expand the guidance, swipe left to dismiss.">Alerts</button>
+                <button type="button" role="tab" class="dash__key dash__key--cp" aria-selected="false" aria-controls="dash-screen" tabindex="-1"
+                  data-src="assets/img/work/car-carplay-dashboard.webp" data-alt="Mock CarPlay dashboard with a map, now playing card and next calendar event."
+                  data-caption="Phone projection. A mock CarPlay mode with its own look, sharing one playback engine with the native media app.">CarPlay</button>
+              </div>
+              <figcaption class="dash__caption" id="dash-caption" aria-live="polite">Main menu. Every tile shows live status, and the split screen on the right is a swipeable carousel.</figcaption>
+            </figure>
+
+            <div class="project__body project__body--split">
+              <div class="prose">
+                <p>
+                  I started this years ago as a Bootstrap and jQuery sketch of my ideal car screen.
+                  Version 2 is a ground-up rewrite in plain HTML, CSS and JavaScript on a fixed
+                  1280 × 480 canvas, the size of a 10.25" automotive display. It opens from
+                  <code>file://</code> with no build step and runs on a Raspberry Pi in kiosk mode.
+                </p>
+                <p>
+                  The rules: tap targets of at least 10&nbsp;mm, one accent colour that carries all
+                  state, big glanceable numbers, and hardware keys that always get you home,
+                  even from inside CarPlay.
+                </p>
+              </div>
+              <ul class="facts">
+                <li><strong>One event bus</strong> keeps the native screens, split screen and CarPlay in sync</li>
+                <li><strong>Canvas maps</strong> built once into <code>Path2D</code> with Dijkstra routing over the street graph</li>
+                <li><strong>Every setting works</strong>: accent colour, units, balance pad, brightness</li>
+                <li><strong>Direct manipulation</strong>: drag the map, scrub tracks, swipe away warnings</li>
+              </ul>
+            </div>
+            <p class="project__links">
+              <a class="link" href="https://github.com/jdotnguyen/car_infotainment_ui" target="_blank" rel="noopener noreferrer">Code on GitHub<span class="visually-hidden"> (opens in new tab)</span></a>
+              <span class="project__stack">Vanilla JS, Canvas, CSS <code>color-mix()</code>, Web Speech</span>
+            </p>
+          </div>
+        </article>
+
+        <!-- Project: Pokédex -->
+        <article class="project project--dex" aria-labelledby="dex-title" data-ambient-zone="dex">
+          <div class="wrap project__row">
+            <div class="project__copy">
+              <h3 id="dex-title" class="project__title">Pokédex</h3>
+              <p class="project__tagline">A React Native Pokédex that stays smooth while scrolling through the entire National Dex.</p>
+              <div class="prose">
+                <p>
+                  Built on PokeAPI with Expo SDK 58 and Expo Router. The list is a two-column grid
+                  tinted by each Pokémon’s primary type. Only on-screen tiles render, pages of 60
+                  load as you scroll, and each tile fetches its own types when it appears.
+                </p>
+                <p>
+                  Detail screens carry About, Base Stats with type defences, Evolution and Moves tabs.
+                  On iOS 26 the tab bar is the native floating Liquid Glass; on Android it’s Material
+                  bottom navigation.
+                </p>
+              </div>
+              <ul class="facts">
+                <li><strong>FlashList</strong> for virtualized tiles</li>
+                <li><strong>TanStack Query</strong> for fetching and caching</li>
+                <li><strong>Regions</strong> and location browsing, favourites and search</li>
+                <li><strong>Jest</strong> tests on the formatting and region logic</li>
+              </ul>
+              <p class="project__links">
+                <a class="link" href="https://github.com/jdotnguyen/pokemon_react" target="_blank" rel="noopener noreferrer">Code on GitHub<span class="visually-hidden"> (opens in new tab)</span></a>
+                <span class="project__stack">React Native 0.88, Expo Router, FlashList</span>
+              </p>
+            </div>
+
+            <div class="phone" aria-label="Interactive Pokédex preview" role="group">
+              <div class="phone__frame">
+                <div class="phone__island" aria-hidden="true"></div>
+                <div class="phone__screen">
+                  <div class="dex-view dex-view--list" id="dex-list">
+                    <p class="dex-title">Pokédex</p>
+                    <ul class="dex-grid" id="dex-grid"></ul>
+                  </div>
+                  <div class="dex-view dex-view--detail" id="dex-detail" hidden>
+                    <div class="dex-detail__head" id="dex-detail-head">
+                      <button type="button" class="dex-back" id="dex-back" aria-label="Back to the list">
+                        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </button>
+                      <p class="dex-detail__num" id="dex-detail-num"></p>
+                      <h4 class="dex-detail__name" id="dex-detail-name" tabindex="-1"></h4>
+                      <p class="dex-detail__types" id="dex-detail-types"></p>
+                      <img class="dex-detail__art" id="dex-detail-art" alt="" width="180" height="180">
+                    </div>
+                    <div class="dex-detail__sheet">
+                      <p class="dex-detail__tab">Base stats</p>
+                      <dl class="dex-stats" id="dex-stats"></dl>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p class="phone__note">Tap a Pokémon to open its detail screen.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project: Just In Case UI -->
+        <article class="project project--jic" aria-labelledby="jic-title" data-ambient-zone="jic">
+          <div class="wrap project__row project__row--flip">
+            <div class="project__copy">
+              <h3 id="jic-title" class="project__title">Just In Case UI</h3>
+              <p class="project__tagline">An accessibility-first React component library. Yes, the name is a pun.</p>
+              <div class="prose">
+                <p>
+                  Every component library I’ve shipped at work taught me the same lesson: accessibility
+                  added at the end never quite fits. Just In Case UI starts there instead, with each
+                  component specced in OpenSpec before any code is written.
+                </p>
+                <p>
+                  The first set is buttons, text input and dropdown. Instead of Storybook, components
+                  are shown in a lightweight kitchen-sink app. The panel here is a small taste of that,
+                  so try it with only your keyboard.
+                </p>
+              </div>
+              <ul class="facts">
+                <li><strong>Primary, secondary, tertiary</strong>: solid, outlined, text</li>
+                <li><strong>Destructive</strong> actions get their own red</li>
+                <li><strong>Labels, hints and errors</strong> wired up for screen readers</li>
+                <li><strong>Full keyboard support</strong> on the dropdown</li>
+              </ul>
+              <p class="project__links">
+                <span class="badge">In progress</span>
+                <span class="project__stack">React, TypeScript, OpenSpec</span>
+              </p>
+            </div>
+
+            <div class="sink" role="group" aria-labelledby="sink-title">
+              <p class="sink__title" id="sink-title">Kitchen sink</p>
+
+              <fieldset class="sink__group">
+                <legend>Buttons</legend>
+                <div class="sink__row">
+                  <button type="button" class="jic-btn jic-btn--primary" data-say="Changes saved.">Save changes</button>
+                  <button type="button" class="jic-btn jic-btn--secondary" data-say="Preview opened.">Preview</button>
+                  <button type="button" class="jic-btn jic-btn--tertiary" data-say="Edit cancelled.">Cancel</button>
+                  <button type="button" class="jic-btn jic-btn--danger" data-say="Draft deleted.">Delete draft</button>
+                </div>
+              </fieldset>
+
+              <div class="sink__group">
+                <label class="jic-label" for="jic-email">Work email</label>
+                <p class="jic-hint" id="jic-email-hint">We’ll only use this to reply.</p>
+                <input class="jic-input" id="jic-email" type="email" autocomplete="email" placeholder="you@company.com"
+                       aria-describedby="jic-email-hint jic-email-error">
+                <p class="jic-error" id="jic-email-error" hidden></p>
+              </div>
+
+              <div class="sink__group">
+                <p class="jic-label" id="jic-size-label">Team size</p>
+                <div class="jic-select" id="jic-select">
+                  <button type="button" class="jic-select__trigger" id="jic-size-btn"
+                          aria-haspopup="listbox" aria-expanded="false" aria-labelledby="jic-size-label jic-size-btn">
+                    <span id="jic-size-value">Choose a size</span>
+                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                  <ul class="jic-select__list" id="jic-size-list" role="listbox" aria-labelledby="jic-size-label" tabindex="-1" hidden>
+                    <li role="option" id="jic-opt-1" aria-selected="false">Just me</li>
+                    <li role="option" id="jic-opt-2" aria-selected="false">2 to 10 people</li>
+                    <li role="option" id="jic-opt-3" aria-selected="false">11 to 50 people</li>
+                    <li role="option" id="jic-opt-4" aria-selected="false">More than 50</li>
+                  </ul>
+                </div>
+              </div>
+
+              <p class="sink__status" id="sink-status" role="status" aria-live="polite">Nothing pressed yet.</p>
+            </div>
+          </div>
+        </article>
       </section>
 
-      <section id="experience" class="section section--panel reveal-when-ready" aria-labelledby="experience-heading">
-        <div class="layout-container layout-container--wide section__inner">
-          <p class="section__kicker">Experience</p>
-          <h2 id="experience-heading" class="section__title section__title--large">Where I’ve shipped</h2>
-          <p class="section__intro section__intro--margin">Enterprise SaaS, public safety, and high-traffic mobile — always with an eye on craft and velocity.</p>
+      <!-- Experience -->
+      <section id="experience" class="experience" aria-labelledby="experience-heading" data-ambient-zone="ice">
+        <div class="wrap">
+          <header class="experience__head">
+            <h2 id="experience-heading" class="section-title">Where I’ve shipped</h2>
+            <p class="experience__intro">Enterprise SaaS, public safety and high-traffic mobile, with an eye on craft and velocity the whole way.</p>
+          </header>
 
-          <div class="timeline-wrap">
+          <div class="road">
           <ol class="timeline">
             <li class="timeline__item">
               <article class="timeline__card" aria-labelledby="exp-eso-lead">
+                <p class="timeline__year" aria-hidden="true">2024</p>
                 <header class="timeline__head">
                   <h3 id="exp-eso-lead" class="timeline__role">Senior Lead Front End Developer, Fire Products</h3>
-                  <p class="timeline__company">ESO · Ottawa, ON</p>
-                  <p class="timeline__dates"><time datetime="2024-06">June 2024</time> – Present</p>
+                  <p class="timeline__company">ESO, Ottawa</p>
+                  <p class="timeline__dates"><time datetime="2024-06">June 2024</time> to present</p>
                 </header>
                 <ul class="timeline__bullets">
                   <li>Architected frontend of newest NERIS Fire Incidents flagship application.</li>
                   <li>Collaborated with various teams on implementation including data team, DBA team, as well as EMS team looking to modernize their apps as well as ensuring proper data sharing and flow.</li>
                   <li>Built custom AI machine learning model for NERIS app using TensorFlow.js. The model studies user behaviours and workflows to further automate and speed up incident reporting times by suggesting often-used value combinations.</li>
-                  <li>Teach junior, intermediate, as well as senior developers how to prompt  and effectively use AI tooling in Cursor with using Plan mode in 4.6-opus while executing the builds with cheaper models.</li>
+                  <li>Teach junior, intermediate, as well as senior developers how to prompt and effectively use AI tooling in Cursor with using Plan mode in 4.6-opus while executing the builds with cheaper models.</li>
                   <li>Leading overhaul of legacy applications using React, Redux, and Radix stateless libraries for internal component library.</li>
                   <li>Rigorously maintain existing Angular applications ensuring they’re the latest 21 or latest JS maintained by Herodev.</li>
                 </ul>
@@ -207,10 +300,11 @@
             </li>
             <li class="timeline__item">
               <article class="timeline__card" aria-labelledby="exp-eso-sr">
+                <p class="timeline__year" aria-hidden="true">2022</p>
                 <header class="timeline__head">
                   <h3 id="exp-eso-sr" class="timeline__role">Senior Front End Developer</h3>
-                  <p class="timeline__company">ESO · Ottawa, ON</p>
-                  <p class="timeline__dates"><time datetime="2022-03">March 2022</time> – <time datetime="2024-06">June 2024</time></p>
+                  <p class="timeline__company">ESO, Ottawa</p>
+                  <p class="timeline__dates"><time datetime="2022-03">March 2022</time> to <time datetime="2024-06">June 2024</time></p>
                 </header>
                 <ul class="timeline__bullets">
                   <li>Help establish engineering team’s frontend forum to discuss best practices and discoveries among all the teams.</li>
@@ -225,10 +319,11 @@
             </li>
             <li class="timeline__item">
               <article class="timeline__card" aria-labelledby="exp-fe">
+                <p class="timeline__year" aria-hidden="true">2020</p>
                 <header class="timeline__head">
                   <h3 id="exp-fe" class="timeline__role">Senior Front End Developer</h3>
-                  <p class="timeline__company">Field Effect Software · Ottawa, ON</p>
-                  <p class="timeline__dates"><time datetime="2020-06">June 2020</time> – <time datetime="2022-03">March 2022</time></p>
+                  <p class="timeline__company">Field Effect Software, Ottawa</p>
+                  <p class="timeline__dates"><time datetime="2020-06">June 2020</time> to <time datetime="2022-03">March 2022</time></p>
                 </header>
                 <ul class="timeline__bullets">
                   <li>Lead the front end build of Cyber Range using a new, ground-up React framework to replace their original UI built in GWT.</li>
@@ -242,29 +337,16 @@
             </li>
           </ol>
 
-          <button
-            type="button"
-            class="timeline__toggle"
-            id="experience-toggle"
-            aria-expanded="false"
-            aria-controls="experience-more"
-          >
-            View more
-          </button>
-
-          <div
-            class="timeline__collapsible"
-            id="experience-more"
-            aria-hidden="true"
-          >
+          <div class="timeline__collapsible" id="experience-more" aria-hidden="true">
             <div class="timeline__collapsible-inner">
           <ol class="timeline timeline--continued" start="4">
             <li class="timeline__item">
               <article class="timeline__card" aria-labelledby="exp-spoonity-fs">
+                <p class="timeline__year" aria-hidden="true">2019</p>
                 <header class="timeline__head">
                   <h3 id="exp-spoonity-fs" class="timeline__role">Full Stack Developer</h3>
-                  <p class="timeline__company">Spoonity · Ottawa, ON</p>
-                  <p class="timeline__dates"><time datetime="2019-10">October 2019</time> – <time datetime="2020-06">June 2020</time></p>
+                  <p class="timeline__company">Spoonity, Ottawa</p>
+                  <p class="timeline__dates"><time datetime="2019-10">October 2019</time> to <time datetime="2020-06">June 2020</time></p>
                 </header>
                 <ul class="timeline__bullets">
                   <li>Built out new REST API endpoints in PHP using Symfony framework to help optimize the frontend team’s workflow as well as build it to spec to make frontend development easier.</li>
@@ -276,10 +358,11 @@
             </li>
             <li class="timeline__item">
               <article class="timeline__card" aria-labelledby="exp-spoonity-fe">
+                <p class="timeline__year" aria-hidden="true">2018</p>
                 <header class="timeline__head">
                   <h3 id="exp-spoonity-fe" class="timeline__role">Front End Developer</h3>
-                  <p class="timeline__company">Spoonity · Ottawa, ON</p>
-                  <p class="timeline__dates"><time datetime="2018-04">April 2018</time> – <time datetime="2019-10">October 2019</time></p>
+                  <p class="timeline__company">Spoonity, Ottawa</p>
+                  <p class="timeline__dates"><time datetime="2018-04">April 2018</time> to <time datetime="2019-10">October 2019</time></p>
                 </header>
                 <ul class="timeline__bullets">
                   <li>Integrated partners' SDKs and plugins into mobile apps (both iOS and Android).</li>
@@ -293,10 +376,11 @@
             </li>
             <li class="timeline__item">
               <article class="timeline__card" aria-labelledby="exp-gfi">
+                <p class="timeline__year" aria-hidden="true">2014</p>
                 <header class="timeline__head">
                   <h3 id="exp-gfi" class="timeline__role">UI Developer / Software Developer</h3>
-                  <p class="timeline__company">GFI Systems · Regina, SK</p>
-                  <p class="timeline__dates"><time datetime="2014-07">July 2014</time> – <time datetime="2018-04">April 2018</time></p>
+                  <p class="timeline__company">GFI Systems, Regina</p>
+                  <p class="timeline__dates"><time datetime="2014-07">July 2014</time> to <time datetime="2018-04">April 2018</time></p>
                 </header>
                 <ul class="timeline__bullets">
                   <li>Redesigned and developed company’s website from the using a simple HTML/CSS layout which was later converted to a WordPress PHP template.</li>
@@ -306,10 +390,11 @@
             </li>
             <li class="timeline__item">
               <article class="timeline__card" aria-labelledby="exp-bv02">
+                <p class="timeline__year" aria-hidden="true">2014</p>
                 <header class="timeline__head">
                   <h3 id="exp-bv02" class="timeline__role">Contract Developer (Part-Time)</h3>
-                  <p class="timeline__company">bv02 · Ottawa, ON</p>
-                  <p class="timeline__dates"><time datetime="2014-03">March 2014</time> – <time datetime="2017-10">October 2017</time></p>
+                  <p class="timeline__company">bv02, Ottawa</p>
+                  <p class="timeline__dates"><time datetime="2014-03">March 2014</time> to <time datetime="2017-10">October 2017</time></p>
                 </header>
                 <ul class="timeline__bullets">
                   <li>Developed WordPress sites (using PHP, HTML, CSS, JavaScript, etc.).</li>
@@ -320,10 +405,11 @@
             </li>
             <li class="timeline__item">
               <article class="timeline__card" aria-labelledby="exp-youachieve">
+                <p class="timeline__year" aria-hidden="true">2011</p>
                 <header class="timeline__head">
                   <h3 id="exp-youachieve" class="timeline__role">Web Developer</h3>
-                  <p class="timeline__company">YouAchieve · Ottawa, ON</p>
-                  <p class="timeline__dates"><time datetime="2011-05">May 2011</time> – <time datetime="2014-01">January 2014</time></p>
+                  <p class="timeline__company">YouAchieve, Ottawa</p>
+                  <p class="timeline__dates"><time datetime="2011-05">May 2011</time> to <time datetime="2014-01">January 2014</time></p>
                 </header>
                 <ul class="timeline__bullets">
                   <li>Developed company website.</li>
@@ -337,44 +423,46 @@
           </ol>
             </div>
           </div>
+
+          <button type="button" class="timeline__toggle" id="experience-toggle" aria-expanded="false" aria-controls="experience-more">
+            Show earlier roles
+          </button>
           </div>
         </div>
       </section>
 
-      <section id="tools" class="section section--dark reveal-when-ready" aria-labelledby="tools-heading">
-        <div class="layout-container layout-container--wide section__inner">
-          <header class="section__header-row">
-            <div>
-              <p class="section__kicker">Toolkit</p>
-              <h2 id="tools-heading" class="section__title section__title--large">Tools &amp; focus</h2>
-            </div>
-          </header>
-          <p class="section__intro tools__lede">
-            Enterprise <strong>Angular</strong> and <strong>.NET</strong> stacks, plus <strong>React</strong> ecosystems where I lead greenfield and migrations — aligned with how I ship at ESO and Field Effect.
-          </p>
-          <ul class="tools-grid" aria-label="Technologies and practices">
-			<li class="tools-grid__item">TypeScript &amp; JavaScript</li>
-            <li class="tools-grid__item">Angular &amp; AngularJS</li>
-            <li class="tools-grid__item">React &amp; React Native</li>
-            <li class="tools-grid__item">C# &amp; .NET</li>
-            <li class="tools-grid__item">Azure DevOps</li>
-            <li class="tools-grid__item">Node.js</li>
-            <li class="tools-grid__item">Figma</li>
-			<li class="tools-grid__item">Magic Patterns</li>
-            <li class="tools-grid__item">E2E &amp; unit testing</li>
-            <li class="tools-grid__item">TensorFlow.js</li>
-            <li class="tools-grid__item">Cursor, Claude Code, &amp; CoPilot</li>
-          </ul>
+      <!-- Tools -->
+      <section id="tools" class="tools" aria-labelledby="tools-heading" data-ambient-zone="tail">
+        <div class="wrap tools__inner">
+          <h2 id="tools-heading" class="section-title">Toolkit</h2>
+          <div>
+            <p class="tools__lede">
+              Enterprise <strong>Angular</strong> and <strong>.NET</strong> stacks at work, and
+              <strong>React</strong> wherever I’m leading greenfield builds and migrations.
+            </p>
+            <ul class="tools__list" aria-label="Technologies and practices">
+              <li>TypeScript &amp; JavaScript</li>
+              <li>Angular &amp; AngularJS</li>
+              <li>React &amp; React Native</li>
+              <li>C# &amp; .NET</li>
+              <li>Azure DevOps</li>
+              <li>Node.js</li>
+              <li>Figma</li>
+              <li>Magic Patterns</li>
+              <li>E2E &amp; unit testing</li>
+              <li>TensorFlow.js</li>
+              <li>Cursor, Claude Code &amp; Copilot</li>
+            </ul>
+          </div>
         </div>
       </section>
     </main>
 
-    <footer id="contact" class="site-footer reveal-when-ready">
-      <div class="layout-container layout-container--narrow site-footer__inner">
-        <p class="site-footer__kicker">Contact</p>
-        <h2 class="site-footer__title">Let’s work together</h2>
+    <footer id="contact" class="site-footer" data-ambient-zone="tail">
+      <div class="wrap site-footer__inner">
+        <h2 class="site-footer__title">Let’s build something people can actually use.</h2>
         <p class="site-footer__lede">
-          Open to senior frontend conversations, architecture reviews, and leadership roles where craft and platform thinking matter.
+          I’m open to senior frontend, architecture and leadership conversations where craft and platform thinking matter.
         </p>
         <p class="site-footer__email">
           <a href="mailto:hello@justinnguyen.ca">hello@justinnguyen.ca</a>
@@ -382,26 +470,19 @@
         <ul class="social-list">
           <li>
             <a class="social-link" href="https://github.com/jdotnguyen" target="_blank" rel="noopener noreferrer">
-              <span class="social-link__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" focusable="false"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-              </span>
-              <span>GitHub</span>
-              <span class="visually-hidden">(opens in new tab)</span>
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.410-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub<span class="visually-hidden"> (opens in new tab)</span>
             </a>
           </li>
           <li>
             <a class="social-link" href="https://www.linkedin.com/in/justin-nguyen-7a054159/" target="_blank" rel="noopener noreferrer">
-              <span class="social-link__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" focusable="false"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-              </span>
-              <span>LinkedIn</span>
-              <span class="visually-hidden">(opens in new tab)</span>
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn<span class="visually-hidden"> (opens in new tab)</span>
             </a>
           </li>
         </ul>
         <p class="site-footer__meta">
-          <a class="back-to-top" href="#top">Back to top</a>
-          <span class="site-footer__sep" aria-hidden="true">·</span>
+          <a class="link" href="#top">Back to top</a>
           <span>&copy; <span id="year"></span> Justin Nguyen</span>
         </p>
       </div>
