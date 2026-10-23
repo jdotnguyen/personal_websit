@@ -30,9 +30,6 @@
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
-        <p class="site-header__clock" aria-label="Local time in Ottawa">
-          <span>Ottawa</span> <time id="ottawa-time">--:--</time>
-        </p>
       </div>
     </header>
 
@@ -157,7 +154,7 @@
               <ul class="facts">
                 <li><strong>FlashList</strong> for virtualized tiles</li>
                 <li><strong>TanStack Query</strong> for fetching and caching</li>
-                <li><strong>Regions</strong> and location browsing, favourites and search</li>
+                <li><strong>Native tabs</strong> for the Pokédex, favourites, types, regions and search</li>
                 <li><strong>Jest</strong> tests on the formatting and region logic</li>
               </ul>
               <p class="project__links">
@@ -189,6 +186,32 @@
                       <dl class="dex-stats" id="dex-stats"></dl>
                     </div>
                   </div>
+
+                  <!-- iOS 26 Liquid Glass tab bar (picture of the app's native tabs, not interactive) -->
+                  <div class="dex-tabbar" aria-hidden="true">
+                    <div class="dex-tabbar__pill">
+                      <span class="dex-tab is-selected">
+                        <svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="7.5" height="7.5" rx="2"/><rect x="13" y="13" width="7.5" height="7.5" rx="2"/></svg>
+                        Pokédex
+                      </span>
+                      <span class="dex-tab">
+                        <svg viewBox="0 0 24 24" class="is-line"><path d="M12 20.5s-7.5-4.6-9.3-9.4C1.5 7.8 3.6 4.5 7 4.5c2 0 3.5 1.1 5 3 1.5-1.9 3-3 5-3 3.4 0 5.5 3.3 4.3 6.6-1.8 4.8-9.3 9.4-9.3 9.4z"/></svg>
+                        Favourites
+                      </span>
+                      <span class="dex-tab">
+                        <svg viewBox="0 0 24 24" class="is-line"><path d="M12 21c-4 0-7-2.7-7-6.6 0-3.3 2.3-5.2 3.6-7.4.3 1.8 1.2 3 2.4 3.6C11 7 12.4 4.6 14.8 3c-.3 2.6.7 4.4 2.1 6 1.3 1.5 2.1 3 2.1 5.2C19 18.2 16 21 12 21z"/><path d="M12 21c-1.7 0-3-1.2-3-2.9 0-1.9 1.5-2.8 2.4-4.4.9 1.4 3.6 2.4 3.6 4.5 0 1.6-1.3 2.8-3 2.8z"/></svg>
+                        Types
+                      </span>
+                      <span class="dex-tab">
+                        <svg viewBox="0 0 24 24" class="is-line"><path d="M3.5 6.2L9 4l6 2.2L20.5 4v13.8L15 20l-6-2.2-5.5 2.2z"/><path d="M9 4v13.8M15 6.2V20"/></svg>
+                        Regions
+                      </span>
+                    </div>
+                    <span class="dex-tabbar__search">
+                      <svg viewBox="0 0 24 24" class="is-line"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5l5 5"/></svg>
+                    </span>
+                  </div>
+                  <div class="phone__home" aria-hidden="true"></div>
                 </div>
               </div>
               <p class="phone__note">Tap a Pokémon to open its detail screen.</p>

@@ -10,22 +10,6 @@
     if (el) el.textContent = String(new Date().getFullYear());
   }
 
-  function initClock() {
-    var el = document.getElementById("ottawa-time");
-    if (!el) return;
-    var fmt;
-    try {
-      fmt = new Intl.DateTimeFormat("en-CA", { timeZone: "America/Toronto", hour: "2-digit", minute: "2-digit", hour12: false });
-    } catch (e) {
-      return;
-    }
-    function tick() {
-      el.textContent = fmt.format(new Date());
-    }
-    tick();
-    setInterval(tick, 15000);
-  }
-
   function initHeader() {
     var header = document.querySelector(".site-header");
     if (!header) return;
@@ -307,7 +291,7 @@
 
   var TYPE_COLORS = {
     normal: "#A4ACAF", fire: "#FB6C6C", water: "#77BDFE", electric: "#FFCE4B", grass: "#48D0B0",
-    poison: "#A974BC", ghost: "#7B6CB3"
+    poison: "#A974BC", ghost: "#7B6CB3", psychic: "#F67FA1", fairy: "#EE99C9"
   };
   var DEX = [
     { id: 1, name: "Bulbasaur", types: ["grass", "poison"], stats: [45, 49, 49, 65, 65, 45] },
@@ -317,7 +301,11 @@
     { id: 94, name: "Gengar", types: ["ghost", "poison"], stats: [60, 65, 60, 130, 75, 110] },
     { id: 133, name: "Eevee", types: ["normal"], stats: [55, 55, 50, 45, 65, 55] },
     { id: 6, name: "Charizard", types: ["fire"], stats: [78, 84, 78, 109, 85, 100] },
-    { id: 9, name: "Blastoise", types: ["water"], stats: [79, 83, 100, 85, 105, 78] }
+    { id: 9, name: "Blastoise", types: ["water"], stats: [79, 83, 100, 85, 105, 78] },
+    { id: 39, name: "Jigglypuff", types: ["normal", "fairy"], stats: [115, 45, 20, 45, 25, 20] },
+    { id: 54, name: "Psyduck", types: ["water"], stats: [50, 52, 48, 65, 50, 55] },
+    { id: 58, name: "Growlithe", types: ["fire"], stats: [55, 70, 45, 70, 50, 60] },
+    { id: 63, name: "Abra", types: ["psychic"], stats: [25, 20, 15, 105, 55, 90] }
   ];
   var STAT_NAMES = ["HP", "Attack", "Defense", "Sp. Atk", "Sp. Def", "Speed"];
 
@@ -509,7 +497,6 @@
 
   function init() {
     setCopyrightYear();
-    initClock();
     initHeader();
     initAmbient();
     initTrails();
