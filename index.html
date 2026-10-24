@@ -15,8 +15,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/App.css?v=3">
-    <script src="assets/js/App.js?v=3" defer></script>
+    <link rel="stylesheet" href="assets/css/App.css?v=4">
+    <script src="assets/js/App.js?v=4" defer></script>
   </head>
   <body data-ambient="tail">
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -74,7 +74,7 @@
             <h2 id="work-heading" class="section-title">Side projects</h2>
             <p class="work__intro">
               Three projects, three very different users: a driver who can only glance,
-              someone flipping through 1,000 Pokémon on a phone, and a developer who needs
+              a trainer planning a team on their phone, and a developer who needs
               components that work for everyone. Each demo below is live, so try it.
             </p>
           </header>
@@ -145,46 +145,166 @@
 
         <!-- Project: Pokédex -->
         <article class="project project--dex" aria-labelledby="dex-title" data-ambient-zone="dex">
-          <div class="wrap project__row">
+
+          <!-- Splash -->
+          <div class="splash" id="dex-splash">
+            <svg class="splash__ball" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+              <circle cx="100" cy="100" r="96" fill="none" stroke="currentColor" stroke-width="5"/>
+              <path d="M4 100h60M136 100h60" stroke="currentColor" stroke-width="5"/>
+              <circle cx="100" cy="100" r="36" fill="none" stroke="currentColor" stroke-width="5"/>
+              <circle cx="100" cy="100" r="16" fill="none" stroke="currentColor" stroke-width="5"/>
+            </svg>
+            <div class="splash__art" aria-hidden="true">
+              <img class="splash__mon splash__mon--a" data-depth="1.2" data-art="6" alt="" width="220" height="220">
+              <img class="splash__mon splash__mon--b" data-depth="-0.8" data-art="25" alt="" width="180" height="180">
+              <img class="splash__mon splash__mon--c" data-depth="0.6" data-art="94" alt="" width="170" height="170">
+              <img class="splash__mon splash__mon--d" data-depth="-1.4" data-art="133" alt="" width="150" height="150">
+              <img class="splash__mon splash__mon--e" data-depth="1" data-art="9" alt="" width="160" height="160">
+            </div>
+
+            <div class="wrap splash__inner">
+              <p class="splash__kicker">Side project &middot; React Native &middot; Expo SDK 58</p>
+              <h3 id="dex-title" class="project__title splash__title">Pokédex</h3>
+              <p class="project__tagline splash__tagline">A pocket-sized Pokédex with a Pokémon of the day, a silhouette quiz and a team builder, all running on PokeAPI.</p>
+              <ul class="splash__stats" aria-label="The app at a glance">
+                <li><strong>1,000+</strong><span>Pokémon</span></li>
+                <li><strong>8</strong><span>Explore hubs</span></li>
+                <li><strong>4</strong><span>Trainer tools</span></li>
+                <li><strong>5</strong><span>Detail tabs</span></li>
+              </ul>
+              <p class="splash__cta"><a class="btn btn--light" href="#dex-phone">Try the app below</a></p>
+            </div>
+
+            <div class="splash__types" aria-hidden="true">
+              <div class="splash__track" id="dex-marquee"></div>
+            </div>
+          </div>
+
+          <div class="wrap project__row project__row--dex">
             <div class="project__copy">
-              <h3 id="dex-title" class="project__title">Pokédex</h3>
-              <p class="project__tagline">A React Native Pokédex that stays smooth while scrolling through the entire National Dex.</p>
               <div class="prose">
                 <p>
-                  Built on PokeAPI with Expo SDK 58 and Expo Router. The list is a two-column grid
-                  tinted by each Pokémon’s primary type. Only on-screen tiles render, pages of 60
-                  load as you scroll, and each tile fetches its own types when it appears.
+                  Built on PokeAPI with Expo SDK 58 and Expo Router. It started as a list and a detail
+                  screen and grew into a full companion: a Home tab with a Pokémon of the day, eight
+                  Explore hubs of reference data, and four tools for planning a team.
                 </p>
                 <p>
-                  Detail screens carry About, Base Stats with type defences, Evolution and Moves tabs.
-                  On iOS 26 the tab bar is the native floating Liquid Glass; on Android it’s Material
-                  bottom navigation.
+                  TanStack Query caches everything, so moving between hubs is instant after the first
+                  load. On iOS 26 the tab bar is the native floating Liquid Glass; on Android it’s
+                  Material bottom navigation.
                 </p>
               </div>
               <ul class="facts">
-                <li><strong>FlashList</strong> for virtualized tiles</li>
-                <li><strong>TanStack Query</strong> for fetching and caching</li>
-                <li><strong>Native tabs</strong> for the Pokédex, favourites, types, regions and search</li>
-                <li><strong>Jest</strong> tests on the formatting and region logic</li>
+                <li><strong>Home</strong>: Pokémon of the day, a daily fact, recent views and favourites</li>
+                <li><strong>Explore</strong>: types, regions, moves, abilities, items, berries, TMs and natures</li>
+                <li><strong>Tools</strong>: team matchups, stat calculator, silhouette quiz and compare</li>
+                <li><strong>Detail screens</strong> with About, Stats, Evolution, Moves and Locations, plus Pokémon cries</li>
               </ul>
               <p class="project__links">
                 <a class="link" href="https://github.com/jdotnguyen/pokemon_react" target="_blank" rel="noopener noreferrer">Code on GitHub<span class="visually-hidden"> (opens in new tab)</span></a>
-                <span class="project__stack">React Native 0.88, Expo Router, FlashList</span>
+                <span class="project__stack">React Native 0.88, Expo Router, FlashList, TanStack Query</span>
               </p>
             </div>
 
-            <div class="phone" aria-label="Interactive Pokédex preview" role="group">
+            <div class="phone" id="dex-phone" aria-label="Interactive Pokédex app preview" role="group">
               <div class="phone__frame">
                 <div class="phone__island" aria-hidden="true"></div>
-                <div class="phone__screen">
-                  <div class="dex-view dex-view--list" id="dex-list">
-                    <p class="dex-title">Pokédex</p>
+                <div class="phone__screen" id="dex-screen" data-view="home">
+
+                  <!-- Home -->
+                  <section class="dex-view dex-home" id="dex-home" aria-labelledby="dex-greet">
+                    <p class="dex-date" id="dex-date"></p>
+                    <h4 class="dex-greet" id="dex-greet" tabindex="-1">Hello</h4>
+
+                    <div class="dex-daily-wrap">
+                      <button type="button" class="dex-daily" id="dex-daily">
+                        <span class="dex-daily__kicker">Pokémon of the day</span>
+                        <span class="dex-daily__name" id="dex-daily-name"></span>
+                        <span class="dex-daily__sub" id="dex-daily-sub"></span>
+                        <span class="dex-daily__types" id="dex-daily-types"></span>
+                        <img class="dex-daily__art" id="dex-daily-art" alt="" width="120" height="120">
+                      </button>
+                      <button type="button" class="dex-shuffle" id="dex-shuffle" aria-label="Show a random Pokémon of the day">
+                        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 7h3.5c3 0 4.5 2 6 5s3 5 6 5H21M3 17h3.5c1.4 0 2.5-.5 3.4-1.4M21 7h-2.5c-1.7 0-3 .7-4 1.8M18.5 4L21 7l-2.5 3M18.5 14l2.5 3-2.5 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </button>
+                    </div>
+
+                    <div class="dex-pair">
+                      <button type="button" class="dex-card dex-card--quiz" data-goto="quiz">
+                        <span class="dex-card__title">Who’s that Pokémon?</span>
+                        <span class="dex-card__sub">Name the silhouette</span>
+                      </button>
+                      <button type="button" class="dex-card dex-card--browse" data-goto="list">
+                        <span class="dex-card__title">Pokédex</span>
+                        <span class="dex-card__sub">Browse all</span>
+                      </button>
+                    </div>
+
+                    <ul class="dex-pills" aria-hidden="true">
+                      <li>Search</li><li>Moves</li><li>Team</li><li>Calculator</li><li>Compare</li><li>Types</li>
+                    </ul>
+
+                    <div class="dex-fact">
+                      <p class="dex-fact__kicker">Did you know?</p>
+                      <p class="dex-fact__text" id="dex-fact"></p>
+                    </div>
+                  </section>
+
+                  <!-- Pokédex list -->
+                  <section class="dex-view dex-view--list" id="dex-list" aria-labelledby="dex-list-title" hidden>
+                    <div class="dex-bar-top">
+                      <button type="button" class="dex-link-back" data-goto="home" aria-label="Back to Home">
+                        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </button>
+                    </div>
+                    <h4 class="dex-title" id="dex-list-title" tabindex="-1">Pokédex</h4>
                     <ul class="dex-grid" id="dex-grid"></ul>
-                  </div>
-                  <div class="dex-view dex-view--detail" id="dex-detail" hidden>
+                  </section>
+
+                  <!-- Favourites -->
+                  <section class="dex-view dex-view--list" id="dex-favs" aria-labelledby="dex-favs-title" hidden>
+                    <h4 class="dex-title dex-title--first" id="dex-favs-title" tabindex="-1">Favourites</h4>
+                    <p class="dex-empty" id="dex-favs-empty">No favourites yet. Open a Pokémon and tap the heart.</p>
+                    <ul class="dex-grid" id="dex-favs-grid"></ul>
+                  </section>
+
+                  <!-- Explore -->
+                  <section class="dex-view dex-view--hub" id="dex-explore" aria-labelledby="dex-explore-title" hidden>
+                    <h4 class="dex-title dex-title--first" id="dex-explore-title" tabindex="-1">Explore</h4>
+                    <ul class="hub-list" id="dex-explore-list"></ul>
+                  </section>
+
+                  <!-- Tools -->
+                  <section class="dex-view dex-view--hub" id="dex-tools" aria-labelledby="dex-tools-title" hidden>
+                    <h4 class="dex-title dex-title--first" id="dex-tools-title" tabindex="-1">Tools</h4>
+                    <ul class="hub-list" id="dex-tools-list"></ul>
+                  </section>
+
+                  <!-- Quiz -->
+                  <section class="dex-view dex-quiz" id="dex-quiz" aria-labelledby="dex-quiz-title" hidden>
+                    <div class="dex-bar-top">
+                      <button type="button" class="dex-link-back" data-goto="tools" aria-label="Back to Tools">
+                        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </button>
+                      <p class="dex-score"><span>Streak <strong id="quiz-streak">0</strong></span><span>Best <strong id="quiz-best">0</strong></span></p>
+                    </div>
+                    <h4 class="dex-title" id="dex-quiz-title" tabindex="-1">Who’s that Pokémon?</h4>
+                    <div class="quiz-stage" id="quiz-stage">
+                      <img id="quiz-img" alt="" width="200" height="200">
+                    </div>
+                    <div class="quiz-options" id="quiz-options" role="group" aria-label="Choose a name"></div>
+                    <p class="quiz-result" id="quiz-result" role="status" aria-live="polite"></p>
+                    <button type="button" class="quiz-next" id="quiz-next" hidden>Next Pokémon</button>
+                  </section>
+
+                  <!-- Detail -->
+                  <section class="dex-view dex-view--detail" id="dex-detail" aria-labelledby="dex-detail-name" hidden>
                     <div class="dex-detail__head" id="dex-detail-head">
-                      <button type="button" class="dex-back" id="dex-back" aria-label="Back to the list">
+                      <button type="button" class="dex-back" id="dex-back" aria-label="Back">
                         <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </button>
+                      <button type="button" class="dex-heart" id="dex-heart" aria-pressed="false" aria-label="Add to favourites">
+                        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.3-9.4C1.5 7.8 3.6 4.5 7 4.5c2 0 3.5 1.1 5 3 1.5-1.9 3-3 5-3 3.4 0 5.5 3.3 4.3 6.6-1.8 4.8-9.3 9.4-9.3 9.4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
                       </button>
                       <p class="dex-detail__num" id="dex-detail-num"></p>
                       <h4 class="dex-detail__name" id="dex-detail-name" tabindex="-1"></h4>
@@ -195,46 +315,56 @@
                       <p class="dex-detail__tab">Base stats</p>
                       <dl class="dex-stats" id="dex-stats"></dl>
                     </div>
-                  </div>
+                  </section>
 
-                  <!-- iOS 26 Liquid Glass tab bar (picture of the app's native tabs, not interactive) -->
-                  <div class="dex-tabbar" aria-hidden="true">
-                    <div class="dex-tabbar__pill">
-                      <span class="dex-tab is-selected">
-                        <svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="7.5" height="7.5" rx="2"/><rect x="13" y="13" width="7.5" height="7.5" rx="2"/></svg>
-                        Pokédex
-                      </span>
-                      <span class="dex-tab">
+                  <!-- Tab bar (the real app uses native tabs: iOS 26 Liquid Glass) -->
+                  <div class="dex-tabbar" id="dex-tabbar">
+                    <nav class="dex-tabbar__pill" aria-label="Pokédex app tabs">
+                      <button type="button" class="dex-tab is-selected" data-tab="home" aria-current="page">
+                        <svg viewBox="0 0 24 24"><path d="M3.5 11.2L12 4l8.5 7.2V20a1 1 0 01-1 1H15v-6H9v6H4.5a1 1 0 01-1-1z"/></svg>
+                        Home
+                      </button>
+                      <button type="button" class="dex-tab" data-tab="favs">
                         <svg viewBox="0 0 24 24" class="is-line"><path d="M12 20.5s-7.5-4.6-9.3-9.4C1.5 7.8 3.6 4.5 7 4.5c2 0 3.5 1.1 5 3 1.5-1.9 3-3 5-3 3.4 0 5.5 3.3 4.3 6.6-1.8 4.8-9.3 9.4-9.3 9.4z"/></svg>
                         Favourites
-                      </span>
-                      <span class="dex-tab">
-                        <svg viewBox="0 0 24 24" class="is-line"><path d="M12 21c-4 0-7-2.7-7-6.6 0-3.3 2.3-5.2 3.6-7.4.3 1.8 1.2 3 2.4 3.6C11 7 12.4 4.6 14.8 3c-.3 2.6.7 4.4 2.1 6 1.3 1.5 2.1 3 2.1 5.2C19 18.2 16 21 12 21z"/><path d="M12 21c-1.7 0-3-1.2-3-2.9 0-1.9 1.5-2.8 2.4-4.4.9 1.4 3.6 2.4 3.6 4.5 0 1.6-1.3 2.8-3 2.8z"/></svg>
-                        Types
-                      </span>
-                      <span class="dex-tab">
-                        <svg viewBox="0 0 24 24" class="is-line"><path d="M3.5 6.2L9 4l6 2.2L20.5 4v13.8L15 20l-6-2.2-5.5 2.2z"/><path d="M9 4v13.8M15 6.2V20"/></svg>
-                        Regions
-                      </span>
-                    </div>
-                    <span class="dex-tabbar__search">
+                      </button>
+                      <button type="button" class="dex-tab" data-tab="explore">
+                        <svg viewBox="0 0 24 24" class="is-line"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg>
+                        Explore
+                      </button>
+                      <button type="button" class="dex-tab" data-tab="tools">
+                        <svg viewBox="0 0 24 24" class="is-line"><path d="M14.5 6.5a4 4 0 005 5L10 21a2.1 2.1 0 01-3-3z"/><path d="M5 4l3 1 1 3-2 2-3-1z"/></svg>
+                        Tools
+                      </button>
+                    </nav>
+                    <span class="dex-tabbar__search" aria-hidden="true">
                       <svg viewBox="0 0 24 24" class="is-line"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5l5 5"/></svg>
                     </span>
                   </div>
                   <div class="phone__home" aria-hidden="true"></div>
                 </div>
               </div>
-              <p class="phone__note">Tap a Pokémon to open its detail screen.</p>
+              <p class="phone__note" id="dex-note" aria-live="polite">Tap the card, shuffle, or try the quiz.</p>
             </div>
           </div>
         </article>
 
         <!-- Project: Just In Case UI -->
         <article class="project project--jic" aria-labelledby="jic-title" data-ambient-zone="jic">
-          <div class="wrap project__row project__row--flip">
-            <div class="project__copy">
+          <div class="wrap">
+            <div class="project__head">
               <h3 id="jic-title" class="project__title">Just In Case UI</h3>
               <p class="project__tagline">An accessibility-first React component library. Yes, the name is a pun.</p>
+              <ul class="chips" aria-label="Library at a glance">
+                <li class="chip chip--live"><span class="badge">In progress</span></li>
+                <li class="chip"><strong>v0.3.0</strong></li>
+                <li class="chip"><strong>24</strong> components</li>
+                <li class="chip"><strong>0</strong> runtime dependencies</li>
+                <li class="chip"><strong>WCAG 2.2</strong> AA</li>
+              </ul>
+            </div>
+
+            <div class="project__body project__body--split project__body--tight">
               <div class="prose">
                 <p>
                   Every component library I’ve shipped at work taught me the same lesson: accessibility
@@ -242,63 +372,305 @@
                   component specced in OpenSpec before any code is written.
                 </p>
                 <p>
-                  The first set is buttons, text input and dropdown. Instead of Storybook, components
-                  are shown in a lightweight kitchen-sink app. The panel here is a small taste of that,
-                  so try it with only your keyboard.
+                  It began with buttons, a text input and a dropdown. It’s now 24 components, from
+                  comboboxes and dialogs to pagination and toasts, each checked with axe. Instead of
+                  Storybook there’s a lightweight kitchen-sink app. The gallery below is a taste of it:
+                  try it with only your keyboard, then re-theme the whole thing.
                 </p>
               </div>
               <ul class="facts">
-                <li><strong>Primary, secondary, tertiary</strong>: solid, outlined, text</li>
-                <li><strong>Destructive</strong> actions get their own red</li>
-                <li><strong>Labels, hints and errors</strong> wired up for screen readers</li>
-                <li><strong>Full keyboard support</strong> on the dropdown</li>
+                <li><strong>Primary, secondary, tertiary</strong>: solid, outlined, text. Destructive gets its own red</li>
+                <li><strong>Native elements first</strong>, then the matching WAI-ARIA pattern, with full keyboard support</li>
+                <li><strong>Contrast is tested</strong>: every colour pair in the tokens is checked in CI</li>
+                <li><strong>Calm by default</strong>: reduced motion and forced colours are both honoured</li>
+                <li><strong>One variable per decision</strong>: every colour, radius and space is a <code>--jic-*</code> token</li>
               </ul>
-              <p class="project__links">
-                <span class="badge">In progress</span>
-                <span class="project__stack">React, TypeScript, OpenSpec</span>
-              </p>
             </div>
 
-            <div class="sink" role="group" aria-labelledby="sink-title">
-              <p class="sink__title" id="sink-title">Kitchen sink</p>
-
-              <fieldset class="sink__group">
-                <legend>Buttons</legend>
-                <div class="sink__row">
-                  <button type="button" class="jic-btn jic-btn--primary" data-say="Changes saved.">Save changes</button>
-                  <button type="button" class="jic-btn jic-btn--secondary" data-say="Preview opened.">Preview</button>
-                  <button type="button" class="jic-btn jic-btn--tertiary" data-say="Edit cancelled.">Cancel</button>
-                  <button type="button" class="jic-btn jic-btn--danger" data-say="Draft deleted.">Delete draft</button>
+            <!-- Gallery -->
+            <div class="sink" id="sink" role="group" aria-labelledby="sink-title">
+              <div class="sink__top">
+                <div>
+                  <p class="sink__title" id="sink-title">Kitchen sink</p>
+                  <p class="sink__sub">Live components, not screenshots.</p>
                 </div>
-              </fieldset>
 
-              <div class="sink__group">
-                <label class="jic-label" for="jic-email">Work email</label>
-                <p class="jic-hint" id="jic-email-hint">We’ll only use this to reply.</p>
-                <input class="jic-input" id="jic-email" type="email" autocomplete="email" placeholder="you@company.com"
-                       aria-describedby="jic-email-hint jic-email-error">
-                <p class="jic-error" id="jic-email-error" hidden></p>
+                <div class="theme-lab" role="group" aria-labelledby="lab-title">
+                  <p class="theme-lab__title" id="lab-title">Re-theme it</p>
+                  <div class="theme-lab__row">
+                    <div class="swatches" role="radiogroup" aria-label="Action colour" id="swatches">
+                      <button type="button" role="radio" aria-checked="true" aria-label="Soft blue" data-accent="#3b6fd4" style="--sw:#3b6fd4"></button>
+                      <button type="button" role="radio" aria-checked="false" aria-label="Violet" data-accent="#6d4cc7" style="--sw:#6d4cc7"></button>
+                      <button type="button" role="radio" aria-checked="false" aria-label="Teal" data-accent="#0e7490" style="--sw:#0e7490"></button>
+                      <button type="button" role="radio" aria-checked="false" aria-label="Green" data-accent="#1d7a4a" style="--sw:#1d7a4a"></button>
+                      <button type="button" role="radio" aria-checked="false" aria-label="Rose" data-accent="#b83280" style="--sw:#b83280"></button>
+                      <button type="button" role="radio" aria-checked="false" aria-label="Amber" data-accent="#a8540a" style="--sw:#a8540a"></button>
+                    </div>
+                    <label class="radius-ctl" for="radius">
+                      <span>Corners</span>
+                      <input type="range" id="radius" min="0" max="22" step="1" value="10">
+                      <output for="radius" id="radius-out">10px</output>
+                    </label>
+                  </div>
+                  <p class="theme-lab__code"><code id="lab-code">--jic-color-action: #3b6fd4;</code></p>
+                </div>
               </div>
 
-              <div class="sink__group">
-                <p class="jic-label" id="jic-size-label">Team size</p>
-                <div class="jic-select" id="jic-select">
-                  <button type="button" class="jic-select__trigger" id="jic-size-btn"
-                          aria-haspopup="listbox" aria-expanded="false" aria-labelledby="jic-size-label jic-size-btn">
-                    <span id="jic-size-value">Choose a size</span>
-                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  </button>
-                  <ul class="jic-select__list" id="jic-size-list" role="listbox" aria-labelledby="jic-size-label" tabindex="-1" hidden>
-                    <li role="option" id="jic-opt-1" aria-selected="false">Just me</li>
-                    <li role="option" id="jic-opt-2" aria-selected="false">2 to 10 people</li>
-                    <li role="option" id="jic-opt-3" aria-selected="false">11 to 50 people</li>
-                    <li role="option" id="jic-opt-4" aria-selected="false">More than 50</li>
-                  </ul>
+              <div class="gtabs" role="tablist" aria-label="Component groups" id="gtabs">
+                <button type="button" role="tab" id="gtab-inputs" aria-selected="true" aria-controls="gpanel-inputs">Inputs</button>
+                <button type="button" role="tab" id="gtab-nav" aria-selected="false" aria-controls="gpanel-nav" tabindex="-1">Navigation</button>
+                <button type="button" role="tab" id="gtab-feedback" aria-selected="false" aria-controls="gpanel-feedback" tabindex="-1">Feedback</button>
+                <button type="button" role="tab" id="gtab-overlays" aria-selected="false" aria-controls="gpanel-overlays" tabindex="-1">Overlays</button>
+              </div>
+
+              <!-- Inputs -->
+              <div class="gpanel" role="tabpanel" id="gpanel-inputs" aria-labelledby="gtab-inputs" tabindex="0">
+                <div class="gcard">
+                  <h4 class="gcard__title">Button</h4>
+                  <div class="sink__row">
+                    <button type="button" class="jic-btn jic-btn--primary" id="btn-save" data-say="Changes saved.">
+                      <svg class="jic-spin" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" hidden><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-opacity=".3" stroke-width="3"/><path d="M21 12a9 9 0 00-9-9" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+                      <span>Save changes</span>
+                    </button>
+                    <button type="button" class="jic-btn jic-btn--secondary" data-say="Preview opened.">Preview</button>
+                    <button type="button" class="jic-btn jic-btn--tertiary" data-say="Edit cancelled.">Cancel</button>
+                    <button type="button" class="jic-btn jic-btn--danger" data-say="Draft deleted.">Delete draft</button>
+                  </div>
+                  <p class="gcard__hint">Save shows a busy state, then a toast.</p>
+                </div>
+
+                <div class="gcard">
+                  <h4 class="gcard__title">Text input</h4>
+                  <label class="jic-label" for="jic-email">Work email</label>
+                  <p class="jic-hint" id="jic-email-hint">We’ll only use this to reply.</p>
+                  <input class="jic-input" id="jic-email" type="email" autocomplete="email" placeholder="you@company.com"
+                         aria-describedby="jic-email-hint jic-email-error">
+                  <p class="jic-error" id="jic-email-error" hidden></p>
+                </div>
+
+                <div class="gcard">
+                  <h4 class="gcard__title">Password input</h4>
+                  <label class="jic-label" for="jic-pw">Password</label>
+                  <div class="jic-field">
+                    <input class="jic-input jic-input--has-btn" id="jic-pw" type="password" autocomplete="new-password" aria-describedby="pw-meter-label">
+                    <button type="button" class="jic-reveal" id="pw-toggle" aria-pressed="false" aria-controls="jic-pw">Show<span class="visually-hidden"> password</span></button>
+                  </div>
+                  <div class="pw-meter">
+                    <p id="pw-meter-label" class="pw-meter__label">Strength: <strong id="pw-meter-text">enter a password</strong></p>
+                    <div class="jic-track" role="progressbar" aria-labelledby="pw-meter-label" aria-valuemin="0" aria-valuemax="4" aria-valuenow="0" aria-valuetext="Empty" id="pw-meter">
+                      <div class="jic-bar" id="pw-bar" style="width:0%"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="gcard">
+                  <h4 class="gcard__title">Search input</h4>
+                  <label class="jic-label" for="jic-search">Find a component</label>
+                  <div class="jic-field">
+                    <svg class="jic-field__icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    <input class="jic-input jic-input--search" id="jic-search" type="search" autocomplete="off" placeholder="Try “tab” or “pop”" aria-controls="comp-list">
+                    <button type="button" class="jic-clear" id="search-clear" aria-label="Clear search" hidden>
+                      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+                    </button>
+                  </div>
+                  <ul class="comp-list" id="comp-list" aria-label="Components"></ul>
+                  <p class="gcard__hint" id="search-count" role="status" aria-live="polite">24 components</p>
+                </div>
+
+                <div class="gcard">
+                  <h4 class="gcard__title">Switch, checkbox, radio</h4>
+                  <div class="jic-checks">
+                    <label class="jic-switch"><input type="checkbox" role="switch" id="sw-motion"><span class="jic-switch__ui" aria-hidden="true"></span> Calm motion</label>
+                    <label class="jic-switch"><input type="checkbox" role="switch" id="sw-news" checked><span class="jic-switch__ui" aria-hidden="true"></span> Product updates</label>
+                    <label class="jic-check"><input type="checkbox" id="chk-terms"><span class="jic-check__ui" aria-hidden="true"></span> I agree to the terms</label>
+                  </div>
+                  <fieldset class="jic-radios">
+                    <legend>Plan</legend>
+                    <label class="jic-radio"><input type="radio" name="plan" value="Free" checked><span class="jic-radio__ui" aria-hidden="true"></span> Free</label>
+                    <label class="jic-radio"><input type="radio" name="plan" value="Pro"><span class="jic-radio__ui" aria-hidden="true"></span> Pro</label>
+                    <label class="jic-radio"><input type="radio" name="plan" value="Team"><span class="jic-radio__ui" aria-hidden="true"></span> Team</label>
+                  </fieldset>
+                </div>
+
+                <div class="gcard">
+                  <h4 class="gcard__title">Dropdown</h4>
+                  <p class="jic-label" id="jic-size-label">Team size</p>
+                  <div class="jic-select" id="jic-select">
+                    <button type="button" class="jic-select__trigger" id="jic-size-btn"
+                            aria-haspopup="listbox" aria-expanded="false" aria-labelledby="jic-size-label jic-size-btn">
+                      <span id="jic-size-value">Choose a size</span>
+                      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <ul class="jic-select__list" id="jic-size-list" role="listbox" aria-labelledby="jic-size-label" tabindex="-1" hidden>
+                      <li role="option" id="jic-opt-1" aria-selected="false">Just me</li>
+                      <li role="option" id="jic-opt-2" aria-selected="false">2 to 10 people</li>
+                      <li role="option" id="jic-opt-3" aria-selected="false">11 to 50 people</li>
+                      <li role="option" id="jic-opt-4" aria-selected="false">More than 50</li>
+                    </ul>
+                  </div>
+                  <p class="gcard__hint">Arrow keys, Home, End and Escape all work.</p>
+                </div>
+              </div>
+
+              <!-- Navigation -->
+              <div class="gpanel" role="tabpanel" id="gpanel-nav" aria-labelledby="gtab-nav" tabindex="0" hidden>
+                <div class="gcard">
+                  <h4 class="gcard__title">Breadcrumbs and link</h4>
+                  <nav aria-label="Breadcrumb">
+                    <ol class="jic-crumbs">
+                      <li><a href="#sink" class="jic-link" data-demo>Home</a></li>
+                      <li><a href="#sink" class="jic-link" data-demo>Components</a></li>
+                      <li><span aria-current="page">Pagination</span></li>
+                    </ol>
+                  </nav>
+                  <p class="gcard__text">Links keep an underline, so they never rely on colour alone.
+                    <a href="https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html" class="jic-link" target="_blank" rel="noopener noreferrer">Why that matters<span class="jic-link__ext" aria-hidden="true"> ↗</span><span class="visually-hidden"> (opens in new tab)</span></a></p>
+                </div>
+
+                <div class="gcard">
+                  <h4 class="gcard__title">Pagination</h4>
+                  <nav aria-label="Pagination demo"><ul class="jic-pages" id="pages"></ul></nav>
+                  <p class="gcard__hint" id="pages-status" role="status" aria-live="polite">Page 4 of 12</p>
+                </div>
+
+                <div class="gcard gcard--wide">
+                  <h4 class="gcard__title">Accordion</h4>
+                  <div class="jic-acc" id="acc">
+                    <div class="jic-acc__item">
+                      <h5><button type="button" class="jic-acc__btn" id="acc-b1" aria-expanded="true" aria-controls="acc-p1">Keyboard support<span class="jic-acc__chev" aria-hidden="true"></span></button></h5>
+                      <div class="jic-acc__panel" id="acc-p1" role="region" aria-labelledby="acc-b1"><div><p>Every component works with Tab, Shift+Tab, Enter, Space, arrows and Escape wherever the pattern calls for them.</p></div></div>
+                    </div>
+                    <div class="jic-acc__item">
+                      <h5><button type="button" class="jic-acc__btn" id="acc-b2" aria-expanded="false" aria-controls="acc-p2">Focus you can always see<span class="jic-acc__chev" aria-hidden="true"></span></button></h5>
+                      <div class="jic-acc__panel" id="acc-p2" role="region" aria-labelledby="acc-b2"><div><p>One two-pixel focus ring, the same on every control, including destructive ones.</p></div></div>
+                    </div>
+                    <div class="jic-acc__item">
+                      <h5><button type="button" class="jic-acc__btn" id="acc-b3" aria-expanded="false" aria-controls="acc-p3">Respects your settings<span class="jic-acc__chev" aria-hidden="true"></span></button></h5>
+                      <div class="jic-acc__panel" id="acc-p3" role="region" aria-labelledby="acc-b3"><div><p>Reduced motion swaps spinners and slides for gentle fades. Forced colours keep every border and state.</p></div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Feedback -->
+              <div class="gpanel" role="tabpanel" id="gpanel-feedback" aria-labelledby="gtab-feedback" tabindex="0" hidden>
+                <div class="gcard">
+                  <h4 class="gcard__title">Badge</h4>
+                  <div class="sink__row">
+                    <span class="jic-badge">Draft</span>
+                    <span class="jic-badge jic-badge--info"><span aria-hidden="true">ℹ</span> New</span>
+                    <span class="jic-badge jic-badge--success"><span aria-hidden="true">✓</span> Live</span>
+                    <span class="jic-badge jic-badge--warning"><span aria-hidden="true">!</span> Review</span>
+                    <span class="jic-badge jic-badge--danger"><span aria-hidden="true">✕</span> Failed</span>
+                  </div>
+                  <p class="gcard__hint">Each tone carries an icon and a word, not just colour.</p>
+                </div>
+
+                <div class="gcard">
+                  <h4 class="gcard__title">Progress</h4>
+                  <div class="jic-progress">
+                    <div class="jic-progress__head"><span id="up-label">Uploading photos</span><span id="up-val">0%</span></div>
+                    <div class="jic-track" role="progressbar" aria-labelledby="up-label" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="up-track"><div class="jic-bar" id="up-bar" style="width:0%"></div></div>
+                  </div>
+                  <div class="jic-progress">
+                    <div class="jic-progress__head"><span id="idx-label">Syncing</span></div>
+                    <div class="jic-track jic-track--indeterminate" role="progressbar" aria-labelledby="idx-label"><div class="jic-bar"></div></div>
+                  </div>
+                  <button type="button" class="jic-btn jic-btn--secondary" id="up-run">Run upload</button>
+                </div>
+
+                <div class="gcard">
+                  <h4 class="gcard__title">Spinner</h4>
+                  <div class="sink__row sink__row--center">
+                    <span class="jic-spinner jic-spinner--sm" role="status"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-opacity=".2" stroke-width="3"/><path d="M21 12a9 9 0 00-9-9" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg><span class="visually-hidden">Loading small</span></span>
+                    <span class="jic-spinner" role="status"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-opacity=".2" stroke-width="3"/><path d="M21 12a9 9 0 00-9-9" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg><span class="visually-hidden">Loading</span></span>
+                    <span class="jic-spinner jic-spinner--lg" role="status"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-opacity=".2" stroke-width="3"/><path d="M21 12a9 9 0 00-9-9" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg><span class="visually-hidden">Loading large</span></span>
+                    <span class="jic-spinner jic-spinner--labelled" role="status"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-opacity=".2" stroke-width="3"/><path d="M21 12a9 9 0 00-9-9" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg><span>Loading results</span></span>
+                  </div>
+                </div>
+
+                <div class="gcard gcard--wide">
+                  <h4 class="gcard__title">Alert</h4>
+                  <div id="alerts">
+                    <div class="jic-alert jic-alert--info" role="status"><span class="jic-alert__ico" aria-hidden="true">ℹ</span><p><strong>Heads up.</strong> Your trial ends in 3 days.</p><button type="button" class="jic-alert__x" aria-label="Dismiss alert">✕</button></div>
+                    <div class="jic-alert jic-alert--success" role="status"><span class="jic-alert__ico" aria-hidden="true">✓</span><p><strong>All set.</strong> Your profile was updated.</p><button type="button" class="jic-alert__x" aria-label="Dismiss alert">✕</button></div>
+                    <div class="jic-alert jic-alert--warning" role="status"><span class="jic-alert__ico" aria-hidden="true">!</span><p><strong>Check this.</strong> Two fields need a second look.</p><button type="button" class="jic-alert__x" aria-label="Dismiss alert">✕</button></div>
+                    <div class="jic-alert jic-alert--danger" role="alert"><span class="jic-alert__ico" aria-hidden="true">✕</span><p><strong>Couldn’t save.</strong> Check your connection and try again.</p><button type="button" class="jic-alert__x" aria-label="Dismiss alert">✕</button></div>
+                  </div>
+                  <button type="button" class="jic-btn jic-btn--tertiary" id="alerts-reset" hidden>Bring the alerts back</button>
+                </div>
+              </div>
+
+              <!-- Overlays -->
+              <div class="gpanel" role="tabpanel" id="gpanel-overlays" aria-labelledby="gtab-overlays" tabindex="0" hidden>
+                <div class="gcard">
+                  <h4 class="gcard__title">Dialog</h4>
+                  <button type="button" class="jic-btn jic-btn--danger" id="dlg-open">Delete project…</button>
+                  <p class="gcard__hint">A real modal: focus is trapped and Escape closes it.</p>
+                </div>
+
+                <div class="gcard">
+                  <h4 class="gcard__title">Toast</h4>
+                  <div class="sink__row">
+                    <button type="button" class="jic-btn jic-btn--primary" data-toast="success">Success</button>
+                    <button type="button" class="jic-btn jic-btn--secondary" data-toast="info">Info</button>
+                    <button type="button" class="jic-btn jic-btn--secondary" data-toast="danger">Error</button>
+                  </div>
+                  <p class="gcard__hint">They stack, pause on hover and announce politely.</p>
+                </div>
+
+                <div class="gcard">
+                  <h4 class="gcard__title">Popover and tooltip</h4>
+                  <div class="sink__row">
+                    <div class="jic-pop">
+                      <button type="button" class="jic-btn jic-btn--secondary" id="pop-btn" aria-expanded="false" aria-controls="pop-panel" aria-haspopup="dialog">Shortcuts</button>
+                      <div class="jic-pop__panel" id="pop-panel" role="dialog" aria-label="Keyboard shortcuts" hidden>
+                        <p><kbd>Tab</kbd> next control</p>
+                        <p><kbd>Esc</kbd> close this</p>
+                        <p><kbd>↑</kbd> <kbd>↓</kbd> move in lists</p>
+                      </div>
+                    </div>
+                    <div class="jic-tip">
+                      <button type="button" class="jic-btn jic-btn--tertiary" aria-describedby="tip-1">Hover or focus me</button>
+                      <span class="jic-tip__bubble" role="tooltip" id="tip-1">Tooltips appear on focus too</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="gcard">
+                  <h4 class="gcard__title">Menu</h4>
+                  <div class="jic-menu" id="menu">
+                    <button type="button" class="jic-btn jic-btn--secondary" id="menu-btn" aria-haspopup="menu" aria-expanded="false" aria-controls="menu-list">
+                      Actions
+                      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <ul class="jic-menu__list" id="menu-list" role="menu" aria-labelledby="menu-btn" hidden>
+                      <li role="none"><button type="button" role="menuitem" tabindex="-1">Rename</button></li>
+                      <li role="none"><button type="button" role="menuitem" tabindex="-1">Duplicate</button></li>
+                      <li role="none"><button type="button" role="menuitem" tabindex="-1">Archive</button></li>
+                      <li role="none"><button type="button" role="menuitem" tabindex="-1" class="is-danger">Delete</button></li>
+                    </ul>
+                  </div>
                 </div>
               </div>
 
               <p class="sink__status" id="sink-status" role="status" aria-live="polite">Nothing pressed yet.</p>
+
+              <dialog class="jic-dialog" id="dlg" aria-labelledby="dlg-title" aria-describedby="dlg-desc">
+                <h4 id="dlg-title">Delete this project?</h4>
+                <p id="dlg-desc">This removes “Night Drive” and its 14 files. You can’t undo it.</p>
+                <div class="jic-dialog__actions">
+                  <button type="button" class="jic-btn jic-btn--tertiary" id="dlg-cancel">Keep it</button>
+                  <button type="button" class="jic-btn jic-btn--danger" id="dlg-confirm">Delete project</button>
+                </div>
+              </dialog>
+
+              <div class="jic-toasts" id="toasts" role="status" aria-live="polite" aria-relevant="additions"></div>
             </div>
+
+            <p class="project__links">
+              <span class="project__stack">React, TypeScript, CSS Modules, Vitest + axe, OpenSpec</span>
+            </p>
           </div>
         </article>
       </section>
@@ -325,9 +697,9 @@
                   <li>Architected frontend of newest NERIS Fire Incidents flagship application.</li>
                   <li>Collaborated with various teams on implementation including data team, DBA team, as well as EMS team looking to modernize their apps as well as ensuring proper data sharing and flow.</li>
                   <li>Built custom AI machine learning model for NERIS app using TensorFlow.js. The model studies user behaviours and workflows to further automate and speed up incident reporting times by suggesting often-used value combinations.</li>
-                  <li>Teach junior, intermediate, as well as senior developers how to prompt and effectively use AI tooling in Cursor with using Plan mode in 4.6-opus while executing the builds with cheaper models.</li>
+                  <li>Teach junior, intermediate, as well as senior developers how to prompt and effectively use AI tooling in Cursor with using Plan mode while executing the builds with cheaper models.</li>
                   <li>Leading overhaul of legacy applications using React, Redux, and Radix stateless libraries for internal component library.</li>
-                  <li>Rigorously maintain existing Angular applications ensuring they’re the latest 21 or latest JS maintained by Herodev.</li>
+                  <li>Rigorously maintain existing Angular applications ensuring they’re the latest 22 or latest JS maintained by Herodev.</li>
                 </ul>
               </article>
             </li>
