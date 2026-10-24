@@ -734,6 +734,14 @@ strong { font-weight: 600; color: var(--ink); }
   pointer-events: none;
 }
 .phone__screen:has(.dex-view--detail:not([hidden]))::before { display: none; }
+.phone__screen--live::before { display: none; }
+.phone__iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #000;
+}
 
 .phone__note {
   margin: 1rem 0 0;
@@ -2276,3 +2284,41 @@ button.hub:focus-visible { outline: 3px solid #1f2430; outline-offset: 2px; }
   }
 }
 .jic-input--search::-webkit-search-cancel-button{display:none}
+
+/* ---------- Embedded kitchen-sink app ---------- */
+.browser { margin: clamp(2rem, 4vw, 3rem) 0 0; }
+.browser__bar {
+  display: flex; align-items: center; gap: 0.75rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 14px 14px 0 0;
+  background: linear-gradient(#2a2f3b, #1b1f29);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+.browser__dots { display: flex; gap: 6px; }
+.browser__dots i { width: 10px; height: 10px; border-radius: 50%; background: rgba(255, 255, 255, 0.22); }
+.browser__url {
+  flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  padding: 0.2rem 0.7rem; border-radius: 8px;
+  background: rgba(0, 0, 0, 0.35); color: rgba(255, 255, 255, 0.7);
+  font-size: 0.78rem; text-align: center;
+}
+.browser__frame {
+  display: block; width: 100%;
+  height: clamp(30rem, 75vh, 46rem);
+  border: 0; border-radius: 0 0 14px 14px;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+.browser__cap { margin: 0.9rem 0 0; text-align: center; font-size: 0.875rem; color: var(--ink-3); }
+
+/* ---------- Live infotainment embed (fixed 1280x480 canvas, scaled to fit) ---------- */
+.dash__screen--live { aspect-ratio: 1280 / 480; }
+.dash__iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 1280px; height: 480px;
+  border: 0;
+  background: #000;
+  transform-origin: 0 0;
+  transform: scale(var(--dash-scale, 0.5));
+}

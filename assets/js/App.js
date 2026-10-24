@@ -255,6 +255,16 @@
   /* ---------------- Infotainment screen switcher ---------------- */
 
   function initDash() {
+    var live = document.getElementById("dash-frame");
+    if (live) {
+      // The embedded app is a fixed 1280x480 canvas: scale it to the bezel.
+      var box = live.parentElement;
+      var fit = function () { box.style.setProperty("--dash-scale", (box.clientWidth / 1280).toFixed(4)); };
+      fit();
+      if (window.ResizeObserver) new ResizeObserver(fit).observe(box);
+      else window.addEventListener("resize", fit);
+      return;
+    }
     var keys = Array.prototype.slice.call(document.querySelectorAll(".dash__key"));
     var screen = document.getElementById("dash-screen");
     var img = document.getElementById("dash-img");
