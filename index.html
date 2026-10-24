@@ -4,15 +4,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Justin Nguyen, senior frontend engineer in Ottawa. 15+ years building Angular and React apps, design systems, and AI-assisted tooling.">
-    <meta name="color-scheme" content="dark">
+    <meta name="color-scheme" content="dark light">
     <meta name="theme-color" content="#060a18">
     <title>Justin Nguyen | Senior Frontend Engineer | Ottawa</title>
+    <script>
+      /* Apply the saved theme before first paint so there is no flash. Dark is the default. */
+      try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t); } catch (e) {}
+    </script>
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/App.css">
-    <script src="assets/js/App.js" defer></script>
+    <link rel="stylesheet" href="assets/css/App.css?v=3">
+    <script src="assets/js/App.js?v=3" defer></script>
   </head>
   <body data-ambient="tail">
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -30,6 +34,12 @@
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false" aria-label="Light mode">
+          <span class="theme-toggle__thumb" aria-hidden="true">
+            <svg class="theme-toggle__moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 019.5 4a8.5 8.5 0 1010.5 10.5z"/></svg>
+            <svg class="theme-toggle__sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+          </span>
+        </button>
       </div>
     </header>
 
