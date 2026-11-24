@@ -37,219 +37,27 @@
     zones.forEach(function (z) { io.observe(z); });
   }
 
-  /* ---------------- Hero: long-exposure light trails ---------------- */
-
-  function initTrails() {
-    var canvas = document.getElementById("trails");
-    if (!canvas || !canvas.getContext) return;
-    var ctx = canvas.getContext("2d");
-    var hero = canvas.parentElement;
-    var w = 0, h = 0, dpr = 1;
-    var vp = { x: 0, y: 0 };
-    var steer = { x: 0, y: 0, tx: 0, ty: 0 };
-    var running = false;
-    var visible = true;
-    var lights = [];
-    var time = 0;
-
-    // Lanes: offset of the lane at the bottom of the screen, as a fraction of width from the vanishing point.
-    // dir 1 = oncoming headlights (towards you), dir -1 = taillights (away from you).
-    var LANES = [
-      { off: -1.35, dir: 1, color: [255, 240, 215], day: [30, 70, 190] },
-      { off: -0.85, dir: 1, color: [214, 232, 255], day: [37, 99, 235] },
-      { off: -0.4, dir: 1, color: [235, 242, 255], day: [14, 52, 150] },
-      { off: 0.3, dir: -1, color: [255, 40, 64], day: [220, 20, 60] },
-      { off: 0.72, dir: -1, color: [255, 64, 52], day: [235, 70, 30] },
-      { off: 1.15, dir: -1, color: [255, 30, 80], day: [190, 18, 100] }
-    ];
-    var POLES = [-2.1, 1.7]; // street-light rows on both shoulders
-
-    function resize() {
-      var rect = hero.getBoundingClientRect();
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
-      w = rect.width;
-      h = rect.height;
-      canvas.width = Math.round(w * dpr);
-      canvas.height = Math.round(h * dpr);
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    }
-
-    function spawn(kind, laneIdx, t) {
-      var lane = kind === "pole" ? null : LANES[laneIdx];
-      return {
-        kind: kind,
-        lane: laneIdx,
-        t: t,
-        speed: kind === "pole" ? 0.0042 : (0.0032 + Math.random() * 0.0034) * (lane.dir === 1 ? 1.25 : 0.85),
-        side: kind === "pole" ? POLES[laneIdx] : 0,
-        jitter: Math.random() * 0.06 - 0.03,
-        prev: null
-      };
-    }
-
-    function seed() {
-      lights = [];
-      LANES.forEach(function (_, i) {
-        for (var n = 0; n < 6; n++) lights.push(spawn("car", i, Math.random()));
-      });
-      POLES.forEach(function (_, i) {
-        for (var n = 0; n < 7; n++) lights.push(spawn("pole", i, n / 7));
+  function initPortfolioPreviews() {
+    function bindChoices(id, select) {
+      var group = document.getElementById(id);
+      var buttons = group.querySelectorAll("button");
+      group.hidden = false;
+      buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          buttons.forEach(function (choice) {
+            choice.setAttribute("aria-pressed", String(choice === button));
+          });
+          select(button);
+        });
       });
     }
 
-    // Point on the road. t: 0 at the horizon, 1 at the bottom edge.
-    function roadPoint(offset, t) {
-      var bend = Math.sin(time * 0.00025) * 0.18 + steer.x * 0.25; // gentle curve
-      var depth = t * t; // perspective
-      var bx = vp.x + offset * w * 0.75;
-      var by = h * 1.08;
-      // quadratic curve: control point pushed sideways by the bend
-      var cx = vp.x + (bx - vp.x) * 0.35 + bend * w * 0.35;
-      var cy = vp.y + (by - vp.y) * 0.25;
-      var u = depth;
-      var x = (1 - u) * (1 - u) * vp.x + 2 * (1 - u) * u * cx + u * u * bx;
-      var y = (1 - u) * (1 - u) * vp.y + 2 * (1 - u) * u * cy + u * u * by;
-      return { x: x, y: y, scale: 0.2 + depth * 2.4 };
-    }
-
-    function step(fade) {
-      time += 16;
-      steer.x += (steer.tx - steer.x) * 0.04;
-      steer.y += (steer.ty - steer.y) * 0.04;
-      vp.x = w * (0.72 + steer.x * 0.1);
-      vp.y = h * (0.46 + steer.y * 0.06);
-
-      if (fade) {
-        ctx.globalCompositeOperation = "destination-out";
-        ctx.fillStyle = "rgba(0,0,0,0.055)";
-        ctx.fillRect(0, 0, w, h);
-      }
-      // Night: light adds up ("lighter"). Day: streaks are dark, saturated paint on a pale sky.
-      var day = document.documentElement.getAttribute("data-theme") === "light";
-      ctx.globalCompositeOperation = day ? "source-over" : "lighter";
-      ctx.lineCap = "round";
-
-      for (var i = 0; i < lights.length; i++) {
-        var L = lights[i];
-        var lane = L.kind === "car" ? LANES[L.lane] : null;
-        var dir = lane ? lane.dir : 1;
-        var accel = 0.25 + L.t * 1.6;
-        L.t += L.speed * accel * dir;
-
-        if (L.t > 1.05 || L.t < 0) {
-          var fresh = spawn(L.kind, L.lane, dir === 1 ? 0 : 1.04);
-          lights[i] = fresh;
-          continue;
-        }
-
-        var off = lane ? lane.off + L.jitter : L.side;
-        var p = roadPoint(off, Math.max(0, L.t));
-
-        if (L.prev) {
-          var alpha, color, width;
-          if (L.kind === "pole") {
-            color = day ? [214, 110, 0] : [255, 170, 80];
-            alpha = 0.3 + L.t * 0.4;
-            width = 0.6 + p.scale * 1.4;
-          } else {
-            color = day ? lane.day : lane.color;
-            alpha = Math.min(1, (day ? 0.5 : 0.4) + L.t * 0.9);
-            width = 0.8 + p.scale * 2.2;
-          }
-          var rgba = "rgba(" + color[0] + "," + color[1] + "," + color[2] + ",";
-          if (L.kind === "car") {
-            // a car is a pair of lights
-            var spread = p.scale * 7;
-            for (var k = -1; k <= 1; k += 2) {
-              ctx.strokeStyle = rgba + alpha * 0.18 + ")";
-              ctx.lineWidth = width * 5;
-              ctx.beginPath();
-              ctx.moveTo(L.prev.x + k * L.prev.s, L.prev.y);
-              ctx.lineTo(p.x + k * spread, p.y);
-              ctx.stroke();
-              ctx.strokeStyle = rgba + alpha + ")";
-              ctx.lineWidth = width;
-              ctx.beginPath();
-              ctx.moveTo(L.prev.x + k * L.prev.s, L.prev.y);
-              ctx.lineTo(p.x + k * spread, p.y);
-              ctx.stroke();
-            }
-            L.prev = { x: p.x, y: p.y, s: spread };
-            continue;
-          }
-          ctx.strokeStyle = rgba + alpha + ")";
-          ctx.lineWidth = width;
-          ctx.beginPath();
-          ctx.moveTo(L.prev.x, L.prev.y);
-          ctx.lineTo(p.x, p.y);
-          ctx.stroke();
-        }
-        L.prev = { x: p.x, y: p.y, s: p.scale * 7 };
-      }
-    }
-
-    function frame() {
-      if (!running) return;
-      step(true);
-      requestAnimationFrame(frame);
-    }
-
-    function start() {
-      if (running || reduceMotion || !visible || document.hidden) return;
-      running = true;
-      requestAnimationFrame(frame);
-    }
-    function stop() { running = false; }
-
-    function drawStill() {
-      // Reduced motion: one frozen long exposure.
-      ctx.clearRect(0, 0, w, h);
-      seed();
-      for (var n = 0; n < 260; n++) step(false);
-    }
-
-    function repaintForTheme() {
-      ctx.clearRect(0, 0, w, h);
-      lights.forEach(function (L) { L.prev = null; });
-      if (reduceMotion) { drawStill(); return; }
-      for (var n = 0; n < 130; n++) step(true); // warm up so the new colours are already streaking
-    }
-    window.addEventListener("themechange", repaintForTheme);
-
-    resize();
-    seed();
-
-    if (reduceMotion) {
-      drawStill();
-      window.addEventListener("resize", function () { resize(); drawStill(); });
-      return;
-    }
-
-    window.addEventListener("resize", function () {
-      resize();
-      lights.forEach(function (L) { L.prev = null; });
+    var image = document.getElementById("station-image");
+    bindChoices("station-choices", function (button) {
+      image.alt = button.dataset.alt;
+      image.src = "assets/img/work/thalassa-" + button.dataset.file + ".webp?v=" + (button.dataset.file === "dock" ? "2" : "3");
+      document.getElementById("station-description").textContent = button.dataset.description;
     });
-
-    hero.addEventListener("pointermove", function (e) {
-      var r = hero.getBoundingClientRect();
-      steer.tx = ((e.clientX - r.left) / r.width - 0.5) * 2;
-      steer.ty = ((e.clientY - r.top) / r.height - 0.5) * 2;
-    });
-    hero.addEventListener("pointerleave", function () { steer.tx = 0; steer.ty = 0; });
-
-    if ("IntersectionObserver" in window) {
-      new IntersectionObserver(function (entries) {
-        visible = entries[0].isIntersecting;
-        if (visible) start(); else stop();
-      }).observe(hero);
-    }
-    document.addEventListener("visibilitychange", function () {
-      if (document.hidden) stop(); else start();
-    });
-
-    // Warm up so the first frame already has streaks.
-    for (var n = 0; n < 160; n++) step(true);
-    start();
   }
 
   /* ---------------- Infotainment screen switcher ---------------- */
@@ -1155,55 +963,11 @@
     });
   }
 
-  /* ---------------- Theme toggle ---------------- */
-
-  function initTheme() {
-    var btn = document.getElementById("theme-toggle");
-    if (!btn) return;
-    var root = document.documentElement;
-    var meta = document.querySelector('meta[name="theme-color"]');
-
-    function current() {
-      return root.getAttribute("data-theme") === "light" ? "light" : "dark";
-    }
-    function apply(theme) {
-      root.setAttribute("data-theme", theme);
-      btn.setAttribute("aria-pressed", theme === "light" ? "true" : "false");
-      if (meta) meta.setAttribute("content", theme === "light" ? "#f4f6fc" : "#060a18");
-      try { localStorage.setItem("theme", theme); } catch (e) {}
-      window.dispatchEvent(new Event("themechange"));
-    }
-
-    // Sync the switch with whatever the head script applied.
-    btn.setAttribute("aria-pressed", current() === "light" ? "true" : "false");
-    if (meta) meta.setAttribute("content", current() === "light" ? "#f4f6fc" : "#060a18");
-
-    btn.addEventListener("click", function () {
-      var next = current() === "light" ? "dark" : "light";
-      if (!document.startViewTransition || reduceMotion) {
-        apply(next);
-        return;
-      }
-      var r = btn.getBoundingClientRect();
-      var x = r.left + r.width / 2;
-      var y = r.top + r.height / 2;
-      var radius = Math.hypot(Math.max(x, window.innerWidth - x), Math.max(y, window.innerHeight - y));
-      var vt = document.startViewTransition(function () { apply(next); });
-      vt.ready.then(function () {
-        root.animate(
-          { clipPath: ["circle(0px at " + x + "px " + y + "px)", "circle(" + radius + "px at " + x + "px " + y + "px)"] },
-          { duration: 700, easing: "cubic-bezier(0.22, 1, 0.36, 1)", pseudoElement: "::view-transition-new(root)" }
-        );
-      }).catch(function () {});
-    });
-  }
-
   function init() {
     setCopyrightYear();
-    initTheme();
     initHeader();
     initAmbient();
-    initTrails();
+    initPortfolioPreviews();
     initDash();
     initSplash();
     initDex();

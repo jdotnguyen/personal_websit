@@ -4,21 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Justin Nguyen, senior frontend engineer in Ottawa. 15+ years building Angular and React apps, design systems, and AI-assisted tooling.">
-    <meta name="color-scheme" content="dark light">
+    <meta name="color-scheme" content="dark">
     <meta name="theme-color" content="#060a18">
     <title>Justin Nguyen | Senior Frontend Engineer | Ottawa</title>
-    <script>
-      /* Apply the saved theme before first paint so there is no flash. Dark is the default. */
-      try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t); } catch (e) {}
-    </script>
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/App.css?v=4">
-    <script src="assets/js/App.js?v=4" defer></script>
+    <link rel="stylesheet" href="assets/css/App.css?v=11">
+    <script src="assets/js/App.js?v=9" defer></script>
   </head>
-  <body data-ambient="tail">
+  <body data-ambient="ice">
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <div class="ambient-strip" aria-hidden="true"></div>
@@ -34,37 +30,26 @@
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
-        <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false" aria-label="Light mode">
-          <span class="theme-toggle__thumb" aria-hidden="true">
-            <svg class="theme-toggle__moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 019.5 4a8.5 8.5 0 1010.5 10.5z"/></svg>
-            <svg class="theme-toggle__sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
-          </span>
-        </button>
       </div>
     </header>
 
     <main id="main-content">
-      <!-- Hero: long-exposure night drive -->
-      <section class="hero" aria-labelledby="hero-heading" data-ambient-zone="tail">
-        <canvas class="hero__canvas" id="trails" aria-hidden="true"></canvas>
-        <div class="hero__shade" aria-hidden="true"></div>
+      <section class="hero" aria-labelledby="hero-heading" data-ambient-zone="ice">
         <div class="hero__inner wrap">
-          <p class="hero__role">Senior frontend engineer in Ottawa</p>
-          <h1 id="hero-heading" class="hero__name">
-            <span class="hero__name-line">Justin</span>
-            <span class="hero__name-line">Nguyen</span>
-          </h1>
-          <p class="hero__lede">
-            I lead frontend for Fire Products at <strong>ESO</strong>, where I architected the
-            <strong>NERIS Fire Incidents</strong> app, modernize legacy Angular, and bring AI into
-            the everyday workflow. After hours I build the things I wish existed.
-          </p>
-          <div class="hero__actions">
-            <a class="btn btn--light" href="#work">See the work</a>
-            <a class="btn btn--ghost" href="mailto:hello@justinnguyen.ca">Email me</a>
+          <div class="hero__copy">
+            <p class="hero__role">Senior frontend engineer in Ottawa</p>
+            <h1 id="hero-heading" class="hero__name">Justin<br>Nguyen</h1>
+            <p class="hero__lede">I build interfaces, tools, and games for the web.</p>
+            <div class="hero__actions">
+              <a class="btn btn--light" href="#work">See the work</a>
+              <a class="btn btn--ghost" href="mailto:hello@justinnguyen.ca">Email me</a>
+            </div>
           </div>
         </div>
-        <p class="hero__hint" aria-hidden="true">Move your pointer to steer</p>
+        <figure class="hero__photo">
+          <img src="assets/img/parliament-at-night-1920.webp" srcset="assets/img/parliament-at-night-960.webp 960w, assets/img/parliament-at-night-1920.webp 1920w, assets/img/parliament-at-night-2800.webp 2800w" sizes="100vw" width="1920" height="1344" alt="The illuminated Peace Tower and Centre Block on Parliament Hill at night." fetchpriority="high">
+          <figcaption><a href="https://commons.wikimedia.org/wiki/File:Canadian_Parliament_at_night.jpg">Photo by Sergey Pesterev</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></figcaption>
+        </figure>
       </section>
 
       <!-- Work -->
@@ -73,15 +58,47 @@
           <header class="work__head">
             <h2 id="work-heading" class="section-title">Side projects</h2>
             <p class="work__intro">
-              Three projects, three very different users: a driver who can only glance,
-              a trainer planning a team on their phone, and a developer who needs
-              components that work for everyone. Each demo below is live, so try it.
+              Step inside a deep-sea research station, try a dashboard designed for touch, build a Pokémon team, or explore an accessible component library.
             </p>
           </header>
         </div>
 
+        <article id="thalassa" class="project station" aria-labelledby="station-title" data-ambient-zone="station">
+          <div class="wrap station__layout">
+            <div class="station__copy">
+              <p class="station__kicker">First-person survival horror</p>
+              <h3 id="station-title" class="project__title">Thalassa</h3>
+              <p class="project__tagline">You’re a security officer on a deep-sea research station. An infection has reached the crew.</p>
+              <div class="prose">
+                <p>I built the station from a modular kit in Three.js. The same steel walls enclose the dock and the crew quarters. Light, surface wear, and the sounds coming through the hull give each room its own character.</p>
+              </div>
+              <p class="project__links">
+                <a class="link" href="https://github.com/jdotnguyen/js-fps" target="_blank" rel="noopener noreferrer">Code on GitHub<span class="visually-hidden"> (opens in new tab)</span></a>
+                <span class="project__stack">Three.js, TypeScript, Vite</span>
+              </p>
+            </div>
+            <figure class="station__viewer">
+              <div class="station__frame">
+                <img id="station-image" src="assets/img/work/thalassa-dock.webp?v=2" width="806" height="454" alt="Steel columns and overhead pipes frame the dock windows.">
+              </div>
+              <figcaption>
+                <p class="station__caption">In-game capture</p>
+                <div id="station-choices" class="choices" role="group" aria-label="Choose a station view" hidden>
+                  <button type="button" aria-pressed="true" data-file="dock" data-alt="Steel columns and overhead pipes frame the dock windows." data-description="Flickering fixtures, alarm beacons, and a handheld flashlight change what you can see as you move through the station.">Dynamic lighting</button>
+                  <button type="button" aria-pressed="false" data-file="shotgun" data-alt="The shotgun held at the ready in the pump room." data-description="Shotgun blasts set hanging lamps swinging, while debris and bodies react to impacts.">Real-time physics engine</button>
+                  <button type="button" aria-pressed="false" data-file="commons" data-alt="A view inside the crew commons." data-description="Crew conversations and station announcements play through the environment with spatial audio.">Fully voiced</button>
+                  <button type="button" aria-pressed="false" data-file="monster" data-alt="An infected creature inside the station." data-description="Infected enemies react to nearby sounds and pursue threats through the station.">Creature AI</button>
+                </div>
+                <p class="station__description" id="station-description" aria-live="polite">Flickering fixtures, alarm beacons, and a handheld flashlight change what you can see as you move through the station.</p>
+                <p class="station__sound">Inside the hull <span>10 seconds of station ambience</span></p>
+                <audio aria-label="Inside the hull, ten seconds of station ambience" controls preload="none" src="assets/audio/thalassa-hull.mp3"></audio>
+              </figcaption>
+            </figure>
+          </div>
+        </article>
+
         <!-- Project: Car infotainment -->
-        <article class="project project--car" aria-labelledby="car-title" data-ambient-zone="car">
+        <article id="car" class="project project--car" aria-labelledby="car-title" data-ambient-zone="car">
           <div class="wrap">
             <div class="project__head">
               <h3 id="car-title" class="project__title">Car Infotainment UI</h3>
@@ -135,7 +152,7 @@
         </article>
 
         <!-- Project: Pokédex -->
-        <article class="project project--dex" aria-labelledby="dex-title" data-ambient-zone="dex">
+        <article id="dex" class="project project--dex" aria-labelledby="dex-title" data-ambient-zone="dex">
 
           <!-- Splash -->
           <div class="splash" id="dex-splash">
@@ -215,7 +232,7 @@
         </article>
 
         <!-- Project: Just In Case UI -->
-        <article class="project project--jic" aria-labelledby="jic-title" data-ambient-zone="jic">
+        <article id="jic" class="project project--jic" aria-labelledby="jic-title" data-ambient-zone="jic">
           <div class="wrap">
             <div class="project__head">
               <h3 id="jic-title" class="project__title">Just In Case UI</h3>
