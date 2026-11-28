@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/App.css?v=11">
-    <script src="assets/js/App.js?v=9" defer></script>
+    <script src="assets/js/App.js?v=10" defer></script>
   </head>
   <body data-ambient="ice">
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -79,17 +79,18 @@
             </div>
             <figure class="station__viewer">
               <div class="station__frame">
-                <img id="station-image" src="assets/img/work/thalassa-dock.webp?v=2" width="806" height="454" alt="Steel columns and overhead pipes frame the dock windows.">
+                <img id="station-image" src="assets/img/work/thalassa-dock.webp?v=4" width="1280" height="720" alt="Overhead lights reflect off the steel dock as a guard stands by the windows.">
               </div>
               <figcaption>
-                <p class="station__caption">In-game capture</p>
+                <p class="station__caption" id="station-caption">In-game capture</p>
                 <div id="station-choices" class="choices" role="group" aria-label="Choose a station view" hidden>
-                  <button type="button" aria-pressed="true" data-file="dock" data-alt="Steel columns and overhead pipes frame the dock windows." data-description="Flickering fixtures, alarm beacons, and a handheld flashlight change what you can see as you move through the station.">Dynamic lighting</button>
-                  <button type="button" aria-pressed="false" data-file="shotgun" data-alt="The shotgun held at the ready in the pump room." data-description="Shotgun blasts set hanging lamps swinging, while debris and bodies react to impacts.">Real-time physics engine</button>
-                  <button type="button" aria-pressed="false" data-file="commons" data-alt="A view inside the crew commons." data-description="Crew conversations and station announcements play through the environment with spatial audio.">Fully voiced</button>
-                  <button type="button" aria-pressed="false" data-file="monster" data-alt="An infected creature inside the station." data-description="Infected enemies react to nearby sounds and pursue threats through the station.">Creature AI</button>
+                  <button type="button" aria-pressed="true" data-file="dock" data-alt="Overhead lights reflect off the steel dock as a guard stands by the windows." data-description="Flickering fixtures, alarm beacons, and a handheld flashlight change what you can see as you move through the station.">Dynamic lighting</button>
+                  <button type="button" aria-pressed="false" data-file="physics" data-alt="A pistol muzzle flash lights up the pump room." data-description="Gunfire sets hanging lamps swinging, while debris and bodies react to impacts.">Real-time physics engine</button>
+                  <button type="button" aria-pressed="false" data-file="commons" data-alt="Crew members sit at a table and stand talking in the commons." data-description="Crew conversations and station announcements play through the environment with spatial audio.">Fully voiced</button>
+                  <button type="button" aria-pressed="false" data-file="monster" data-caption="Creature rig still" data-alt="The Juggernaut hunches forward mid-stride with its jaws open." data-description="The Juggernaut shifts its weight between its hands and feet, planting each limb as it walks and roars mid-stride.">Realistic Creature Motion</button>
                 </div>
                 <p class="station__description" id="station-description" aria-live="polite">Flickering fixtures, alarm beacons, and a handheld flashlight change what you can see as you move through the station.</p>
+                <p class="station__caption" id="station-model-credit" hidden>Modified <a class="link" href="https://sketchfab.com/3d-models/monster-juggernaut-a36b8b8d97ac4f68ac2759591bfcf95f">Juggernaut model by sanyaork</a> (<a class="link" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>)</p>
                 <p class="station__sound">Inside the hull <span>10 seconds of station ambience</span></p>
                 <audio aria-label="Inside the hull, ten seconds of station ambience" controls preload="none" src="assets/audio/thalassa-hull.mp3"></audio>
               </figcaption>

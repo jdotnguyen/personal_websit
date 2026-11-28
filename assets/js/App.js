@@ -53,9 +53,14 @@
     }
 
     var image = document.getElementById("station-image");
+    var imageVersion = image.src.split("?")[1];
+    var caption = document.getElementById("station-caption");
+    var modelCredit = document.getElementById("station-model-credit");
     bindChoices("station-choices", function (button) {
       image.alt = button.dataset.alt;
-      image.src = "assets/img/work/thalassa-" + button.dataset.file + ".webp?v=" + (button.dataset.file === "dock" ? "2" : "3");
+      image.src = "assets/img/work/thalassa-" + button.dataset.file + ".webp?" + imageVersion;
+      caption.textContent = button.dataset.caption || "In-game capture";
+      modelCredit.hidden = !button.dataset.caption;
       document.getElementById("station-description").textContent = button.dataset.description;
     });
   }
